@@ -1,0 +1,62 @@
+{
+    "cotizaciones":[{
+        "codigo": "C0035453",
+        "version": [{
+            "id": 12,
+            "version": "V3"
+        }],
+        "versionDeSolicitud":[{
+            "id": 11,
+            "versionDeSolicitud": "V2"
+        }],
+        "fecha": "16/06/2014",
+        "prima": 6000,
+        "montoAsegurado": 1000000,
+        "estado": [{
+            "pagado": true,
+            "vencido": false
+        }],
+        "informacionDelRamo": [{
+            "vehiculo":[{
+                "placa": "PE-321",
+                "marca": [{
+                    "id": 11,
+                    "marca": "Toyota"
+                }],
+                "modelo": [{
+                    "id": 22,
+                    "modelo": "Yaris"
+                }],
+                "clase": [{
+                    "id": 23,
+                    "clase": "sedan"
+                }],
+                "uso": [{
+                    "id": 12,
+                    "uso": "Particular"
+                }],
+                "numeroDeSerie": "SN65461468453321",
+                "numeroDeAsientos": 6,
+                "year": 2012,
+                "inicioDeVigencia": "6/18/2019"
+            }]
+        }],
+        "inspeccion": [{
+            "requiere": true,
+            "personaDeContacto": "Carlos",
+            "telefono": "14654654",
+            "referencia": "Lunes 8:00 am"
+        }],
+        "archivos": "https:/aws/b360/user/files",
+        "cliente": "CLI6546514534",
+        "evidencias": [{
+            "detalle": "Primer Contacto",
+            "descripcion": "Archivo externo subido el 05 de enero del 2020 a las 05:40PM",
+            "fecha": "16/06/2014",
+            "estado": [{
+                "completo": true,
+                "pendiente": false
+            }]
+        }]
+    }]
+}

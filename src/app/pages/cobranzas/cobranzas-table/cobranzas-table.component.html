@@ -1,0 +1,66 @@
+<vex-page-layout mode="card">
+
+    <vex-page-layout-header fxLayout="row" fxLayoutAlign="space-between center">
+
+        <div class="px-gutter bg-primary-500 flex-none">
+            <div class="flex items-center" vexContainer>
+                <button (click)="openMenu()" @scaleIn class="sm:hidden text-primary-contrast-500" mat-icon-button
+                    type="button">
+                    <mat-icon [icIcon]="icMenu"></mat-icon>
+                </button>
+                <h2 class="headline text-primary-contrast-500 m-0 flex items-center w-full max-w-xxxs mr-6">
+                    <ic-icon @scaleIn [icon]="icReceipt" class="hidden sm:block"></ic-icon>
+                    <span @fadeInRight class="ml-4 block">Cobranzas</span>
+                </h2>
+            </div>
+
+        </div>
+
+        <div>
+            <div class="flex items-center">
+                <!-- <div
+                    class="hidden sm:flex items-center bg-card rounded-full overflow-hidden relative ltr:pl-5 rtl:pr-5 h-12 max-w-md w-full shadow-8 mx-auto">
+                    <ic-icon [icon]="icSearch" class="text-secondary flex-none" size="24px"></ic-icon>
+                    <input [formControl]="searchCtrl"
+                        class="border-0 h-12 outline-none ltr:pl-4 rtl:pr-4 placeholder:text-secondary bg-card flex-auto"
+                        placeholder="Buscar cupón..." type="text" />
+                </div> -->
+                <div>
+                    <button mat-icon-button matTooltip="Actualizar Registros" type="button"
+                        class="ml-8 text-primary-contrast-500" (click)="pickFile()">
+                        <mat-icon [icIcon]="icRefresh"></mat-icon>
+                    </button>
+                </div>
+                <div>
+                    <button mat-icon-button matTooltip="Descargar en formato Excell" type="button"
+                        class="ml-4 text-primary-contrast-500">
+                        <mat-icon [icIcon]="icCloudDownload"></mat-icon>
+                    </button>
+
+                </div>
+            </div>
+        </div>
+
+    </vex-page-layout-header>
+
+    <vex-page-layout-content vexContainer>
+        <div class="card">
+
+            <div class="p-6">
+
+                
+                <vex-filter-form></vex-filter-form>
+                
+                <mat-divider></mat-divider>
+                
+                <vex-custom-table (rowClick)="rowClick($event)" [columns]="tableColumns"
+                    [data]="tableData" [searchStr]="searchStr$ | async">
+                </vex-custom-table>
+
+            </div>
+
+        </div>
+    </vex-page-layout-content>
+
+</vex-page-layout>
+

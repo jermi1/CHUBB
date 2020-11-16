@@ -1,0 +1,39 @@
+
+
+.email-list {
+    .email-list-item {
+        display: flex;
+        .email-list-item-content {
+            flex-grow: 1;
+            .email-list-item-attach button {
+                margin-right: 0.3rem;
+                margin-bottom: 0.2rem;
+            }
+        }
+        .email-list-item-image {
+            margin-right: 1.5rem;
+            padding-top: .5rem;
+            img {
+                flex-shrink: 0;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+        }
+        
+    }
+    
+}
+
+.upload-holder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    width: auto;
+    background-color: #efefef;
+    border-radius: 0.6rem;
+    text-align: center;
+    border: dashed 1px #dddddd
+}

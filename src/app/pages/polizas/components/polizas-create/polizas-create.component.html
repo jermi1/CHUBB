@@ -1,0 +1,66 @@
+<form (ngSubmit)="save()" [formGroup]="form">
+  <div fxLayout="row" fxLayoutAlign="start center" mat-dialog-title>
+    <h2 class="headline m-0" fxFlex="auto">Registrar Póliza</h2>
+
+    <!-- <button (click)="toggleStar()" class="text-secondary" mat-icon-button type="button">
+      <mat-icon *ngIf="poliza?.starred" [icIcon]="icStar" class="text-amber-500"></mat-icon>
+      <mat-icon *ngIf="!poliza?.starred" [icIcon]="icStarBorder"></mat-icon>
+    </button> -->
+
+    <!-- <button [matMenuTriggerFor]="settingsMenu" class="text-secondary" mat-icon-button type="button">
+      <mat-icon [icIcon]="icMoreVert"></mat-icon>
+    </button> -->
+
+    <button class="text-secondary" mat-dialog-close mat-icon-button type="button">
+      <mat-icon [icIcon]="icClose"></mat-icon>
+    </button>
+  </div>
+
+  <mat-divider class="-mx-6 text-border"></mat-divider>
+
+  <mat-dialog-content fxLayout="column" class="mt-6">
+
+    <mat-form-field appearance="outline">
+      <mat-label>Aseguradoras</mat-label>
+      <mat-select>
+        <mat-option value="la-positiva">La Positiva</mat-option>
+        <mat-option value="rimac">Rimac</mat-option>
+        <mat-option value="mapfre">Mapfre</mat-option>
+        <mat-option value="pacifico">Pacífico</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Ramo</mat-label>
+      <mat-select>
+        <mat-option value="auto">Auto</mat-option>
+        <mat-option value="vida">Vida</mat-option>
+        <mat-option value="SCTR">SCTR</mat-option>
+        <mat-option value="otro">Otro</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    
+    
+
+    <mat-form-field appearance="outline" *ngIf="nuevoCliente">
+      <mat-label>Buscar cliente registrado</mat-label>
+      <input matInput>
+      <mat-icon [icIcon]="icSearch" class="ltr:mr-3 rtl:ml-3" matSuffix></mat-icon>
+    </mat-form-field>
+
+
+    <div class="flex pb-6" [formGroup]="form">
+        <mat-checkbox [(ngModel)]="nuevoCliente" color="primary" formControlName="esNuevoCliente">Es cliente ya registrado</mat-checkbox>
+        <mat-checkbox color="primary" class="ml-8">Agenciamiento</mat-checkbox>
+    </div>
+
+  </mat-dialog-content>
+
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close type="button">CANCELAR</button>
+    <button color="primary" mat-button type="submit" >REGISTRAR POLIZA</button>
+  </mat-dialog-actions>
+</form>
+
+

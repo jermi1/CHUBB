@@ -1,0 +1,67 @@
+<form (ngSubmit)="save()" [formGroup]="form">
+  <div fxLayout="row" fxLayoutAlign="start center" mat-dialog-title>
+    <h2 class="headline m-0" fxFlex="auto">Pre cierre</h2>
+
+    <!-- <button (click)="toggleStar()" class="text-secondary" mat-icon-button type="button">
+      <mat-icon *ngIf="comision?.starred" [icIcon]="icStar" class="text-amber-500"></mat-icon>
+      <mat-icon *ngIf="!comision?.starred" [icIcon]="icStarBorder"></mat-icon>
+    </button> -->
+
+    <!-- <button [matMenuTriggerFor]="settingsMenu" class="text-secondary" mat-icon-button type="button">
+      <mat-icon [icIcon]="icMoreVert"></mat-icon>
+    </button> -->
+
+    <button class="text-secondary" mat-dialog-close mat-icon-button type="button">
+      <mat-icon [icIcon]="icClose"></mat-icon>
+    </button>
+  </div>
+
+  <mat-divider class="-mx-6 text-border"></mat-divider>
+
+  <mat-dialog-content fxLayout="column" class="mt-6">
+
+    <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+      <mat-label>Aseguradora</mat-label>
+      <mat-select [(value)]="aseguradoraSeleccionada">
+          <mat-option value="PE">La Positiva</mat-option>
+          <mat-option value="AR">Mapfre</mat-option>
+          <mat-option value="BR">Pacífico</mat-option>
+          <mat-option value="BR">Rimac</mat-option>
+      </mat-select>
+      </mat-form-field>
+
+    <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+      <mat-label>Fecha Inicio</mat-label>
+      <input (click)="formDatepickerRef.open()" (focus)="formDatepickerRef.open()"
+        [matDatepicker]="formDatepickerRef" matInput readonly>
+      <mat-datepicker-toggle [for]="formDatepickerRef" matSuffix></mat-datepicker-toggle>
+      <mat-datepicker #formDatepickerRef></mat-datepicker>
+    </mat-form-field>
+
+
+    <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+      <mat-label>Fecha Fin</mat-label>
+      <input (click)="formDatepickerRef2.open()" (focus)="formDatepickerRef2.open()"
+        [matDatepicker]="formDatepickerRef2" matInput readonly>
+      <mat-datepicker-toggle [for]="formDatepickerRef2" matSuffix></mat-datepicker-toggle>
+      <mat-datepicker #formDatepickerRef2></mat-datepicker>
+    </mat-form-field>
+
+    <!-- <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+      <mat-label>Nº de factura / recibo</mat-label>
+      <input matInput>
+    </mat-form-field> -->
+
+    <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+      <mat-label>Nº de cierre</mat-label>
+      <input matInput>
+    </mat-form-field>
+
+
+  </mat-dialog-content>
+
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close type="button">CANCELAR</button>
+    <button color="primary" mat-button type="submit">REALIZAR PRE CIERRE</button>
+  </mat-dialog-actions>
+</form>

@@ -1,0 +1,62 @@
+<vex-page-layout mode="card">
+
+  <vex-page-layout-header fxLayout="row" fxLayoutAlign="space-between center">
+    <div>
+      <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="25px">
+
+        <button [routerLink]="['/ajustadores']" mat-icon-button type="button">
+          <mat-icon [icIcon]="icArrowBackIos"></mat-icon>
+        </button>
+        <div>
+          <h2 class="title m-0">Editar Ajustador</h2>
+
+        </div>
+      </div>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="15px">
+
+      <button color="primary-50" mat-stroked-button type="button">
+        <span>Cancelar</span>
+      </button>
+
+      <button color="primary-50" mat-raised-button type="button">Guardar Cambios</button>
+
+    </div>
+  </vex-page-layout-header>
+
+  <vex-page-layout-content vexContainer>
+    <div class="card" style="width: 100%; max-width: 600px; max-width: 0 auto;">
+      <div class="p-6">
+        <div class="pb-4" fxLayout="row" fxLayoutGap="8px">
+
+          <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="50">
+            <mat-label>Nombres</mat-label>
+            <input matInput>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="50">
+            <mat-label>Codigo SBS</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </div>
+
+
+      </div>
+
+      <div fxLayout="row" fxLayoutGap="8px">
+        <!--
+          <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+            <mat-label>Fecha de Registro</mat-label>
+            <input (click)="formDatepickerRef2.open()" (focus)="formDatepickerRef2.open()"
+            [matDatePicker]="formDatepickerRef2" matInput readonly>
+            <mat-datepicker-toggle [for]="formDatepickerRef2" matSuffix></mat-datepicker-toggle>
+            <mat-datepicker #formDatePickerRef2></mat-datepicker>
+
+          </mat-form-field>
+          -->
+      </div>
+
+    </div>
+  </vex-page-layout-content>
+
+</vex-page-layout>

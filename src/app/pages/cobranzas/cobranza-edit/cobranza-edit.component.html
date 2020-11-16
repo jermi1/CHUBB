@@ -1,0 +1,70 @@
+<vex-page-layout mode="card">
+
+  <vex-page-layout-header fxLayout="row" fxLayoutAlign="space-between center">
+
+    <div>
+      <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="25px">
+
+        <button [routerLink]="['/cobranzas']" mat-icon-button type="button">
+          <mat-icon [icIcon]="icArrowBackIos"></mat-icon>
+        </button>
+
+
+        <div>
+          <h2 class="title m-0">Agregar / Editar Póliza - Autos</h2>
+          <div>Diego Alonso Alvarado Alatrista - DNI 45055471 - Materia Gris</div>
+        </div>
+      </div>
+    </div>
+    
+    <div fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="15px">
+
+      <button color="primary-50" mat-stroked-button type="button">
+        <span>Cancelar</span>
+      </button>
+
+      <button color="primary-50" mat-raised-button type="button">Guardar Cambios</button>
+
+    </div>
+  </vex-page-layout-header>
+
+  <vex-page-layout-content vexContainer>
+    <div class="card">
+
+      <mat-tab-group>
+        <mat-tab label="Póliza">
+          <div class="p-6">
+            Detalles de póliza
+          </div>
+        </mat-tab>
+
+        <mat-tab label="Cronograma de Pagos">
+          <div class="p-6">
+            Demo 2
+          </div>
+        </mat-tab>
+
+        <mat-tab label="Cobranzas">
+          <div class="p-6">
+            Evidencias
+          </div>
+        </mat-tab>
+
+        <mat-tab label="Siniestros">
+          <div class="p-6">
+            Demo 3
+          </div>
+        </mat-tab>
+
+        <mat-tab label="Evidencias">
+          <div class="p-6">
+            Evidencias
+          </div>
+        </mat-tab>
+
+      </mat-tab-group>
+
+    </div>
+  </vex-page-layout-content>
+
+</vex-page-layout>

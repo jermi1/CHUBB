@@ -1,0 +1,312 @@
+<vex-page-layout mode="card">
+
+  <!-- <vex-page-layout-header fxLayout="column" fxLayoutAlign="center start">
+    <div vexContainer>
+      <h2 class="title m-0">Diego Alonso Alvarado Alatrista</h2>
+      <vex-breadcrumbs [crumbs]="['Page Layouts', 'Card', 'Large Header & Tabbed']"></vex-breadcrumbs>
+    </div>
+  </vex-page-layout-header> -->
+
+
+  <vex-page-layout-header fxLayout="row" fxLayoutAlign="space-between center">
+
+    
+    <div>
+      <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="25px">
+   
+
+
+        <button [routerLink]="['/cobranzas']"  mat-icon-button type="button">
+          <mat-icon [icIcon]="icArrowBackIos"></mat-icon>
+        </button>
+
+        <div>
+          <h2 class="title m-0">400388544442 - Autos</h2>
+          <div>Diego Alonso Alvarado Alatrista - DNI 45055471 - Materia Gris</div>
+        </div>
+      </div>
+      
+    </div>
+    <div fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="15px">
+     
+      <button color="primary-50" mat-raised-button type="button">Renovar</button>
+
+      <button (click)="$event.stopPropagation()"
+                      [matMenuTriggerFor]="polizaMenu"
+                      mat-icon-button
+                      type="button">
+                <mat-icon [icIcon]="icMoreVert"></mat-icon>
+              </button>
+      
+    </div>
+  </vex-page-layout-header>
+
+  <mat-menu #polizaMenu="matMenu" xPosition="before" yPosition="below">
+    <button mat-menu-item [routerLink]="['/cobranzas/editar']">
+      <mat-icon [icIcon]="icEdit"></mat-icon>
+      <span>Editar Póliza</span>
+    </button>
+  
+    <button mat-menu-item>
+      <mat-icon [icIcon]="icDeleteForever"></mat-icon>
+      <span>Eliminar Póliza</span>
+    </button>
+  </mat-menu>
+  
+  <vex-page-layout-content vexContainer>
+    <div class="card">
+      
+      <mat-tab-group>
+        <mat-tab label="Póliza">
+          <div class="p-10">
+            <div class="pb-0" fxLayout.lt-sm="column" fxLayoutGap="16px" fxLayoutGap.lt-sm="0">
+              <div fxFlex="25">
+                <img src="/assets/img/aseguradoras/la-positiva.png" alt="La Positiva" style="height: 50px; width: auto;" class="d-block">
+                <div class="mt-10">
+                  <div class="mat-caption text-gray-500">Nº de Póliza</div>
+                  <div class="mat-h3 mb-3">400388544442</div>
+                </div>
+
+                <div>
+                  <div class="mat-caption text-gray-500">Nº de Certificado</div>
+                  <div class="mat-h3 mb-3">1212444</div>
+                </div>
+                <div>
+                  <div class="mat-caption text-gray-500">Monto Asegurado</div>
+                  <div class="mat-h3 mb-3">US$ 100.000,00</div>
+                </div>
+
+                <div>
+                  <div class="mat-caption text-gray-500">Prima</div>
+                  <div class="mat-h3 mb-3">US$ 120</div>
+                </div>
+              </div>
+
+              <div fxFlex="auto">
+                <h4 class="text-primary-500 mb-3">Datos de la Póliza</h4>
+                <div fxLayout="row">
+                  <div fxFlex="25">
+                    <div class="mat-caption text-gray-500">Fecha de Inicio de Vigencia</div>
+                    <div class="mb-3">12/12/2019</div>
+                  </div>
+                  <div fxFlex="25">
+                    <div class="mat-caption text-gray-500">Fecha de Fin de Vigencia</div>
+                    <div class="mb-3">12/03/2020</div>
+                  </div>
+                  <div fxFlex="25">
+                    <div class="mat-caption text-gray-500">Nº de Comprobante</div>
+                    <div class="mb-3">B002-000000012</div>
+                  </div>
+                  <div fxFlex="25"></div>
+                </div>
+
+
+                <h4 class="text-primary-500 mt-5 mb-3">Datos del Vehículo</h4>
+                <div fxLayout="row">
+                  <div fxFlex="25">
+                    <div class="mat-caption text-gray-500">Marca</div>
+                    <div class="mb-3">Toyota</div>
+                  </div>
+                  <div fxFlex="25">
+                    <div class="mat-caption text-gray-500">Versión</div>
+                    <div class="mb-3">Corolla</div>
+                  </div>
+                  <div fxFlex="25">
+                    <div class="mat-caption text-gray-500">Placa</div>
+                    <div class="mb-3">AKE123</div>
+                  </div>
+                  <div fxFlex="25">
+                    <div class="mat-caption text-gray-500">Clase</div>
+                    <div class="mb-3">Station Wagon</div>
+                  </div>
+                </div>
+                <div fxLayout="row">
+                  <div fxFlex="25">
+                    <div class="mat-caption text-gray-500">Uso</div>
+                    <div class="mb-3">Taxi</div>
+                  </div>
+                  <div fxFlex="25">
+                    <div class="mat-caption text-gray-500">Asientos</div>
+                    <div class="mb-3">6</div>
+                  </div>
+                  <div fxFlex="25">
+                    <div class="mat-caption text-gray-500">Nº de Serie</div>
+                    <div class="mb-3">478389292</div>
+                  </div>
+                  <div fxFlex="25">
+                    <div class="mat-caption text-gray-500">Año</div>
+                    <div class="mb-3">2010</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </mat-tab>
+
+        <mat-tab label="Cliente">
+          <div class="p-10">
+            <div class="pb-0" fxLayout.lt-sm="column" fxLayoutGap="16px" fxLayoutGap.lt-sm="0">
+              
+              <div fxFlex="auto">
+                <h4 class="text-primary-500 mb-3">Persona Natural</h4>
+                <div fxLayout="row">
+                  <div fxFlex="25">
+                    <div class="mat-caption text-gray-500">Nombres</div>
+                    <div class="mb-3">Diego </div>
+                  </div>
+                  <div fxFlex="25">
+                    <div class="mat-caption text-gray-500">Paellido Paterno</div>
+                    <div class="mb-3">Alvarado</div>
+                  </div>
+                  <div fxFlex="25">
+                    <div class="mat-caption text-gray-500">Paellido Materno</div>
+                    <div class="mb-3">Alatrista </div>
+                  </div>
+                  <div fxFlex="25"></div>
+                </div>
+                <div fxLayout="row">
+                  <div fxFlex="25">
+                    <div class="mat-caption text-gray-500">Fecha de Ingreso</div>
+                    <div class="mb-3">12/01/2020</div>
+                  </div>
+                  <div fxFlex="25">
+                    <div class="mat-caption text-gray-500">Nacionalidad</div>
+                    <div class="mb-3">Peruano</div>
+                  </div>
+                  <div fxFlex="25">
+                    <div class="mat-caption text-gray-500">Fecha de Nacimiento</div>
+                    <div class="mb-3">12/11/1997</div>
+                  </div>
+                </div>
+
+                <h4 class="text-primary-500 mt-5 mb-3">Información de ley</h4>
+                <div fxLayout="row">
+             <!--     <div fxFlex="25">
+                    <div class="mat-caption text-gray-500">LAFT</div>
+                    <div class="mb-3">Bajo</div>
+                  </div>
+                  <div fxFlex="25">
+                    <div class="mat-caption text-gray-500">Infocorp</div>
+                    <div class="mb-3">Medio</div>
+                  </div>
+                -->
+                  <div fxFlex="25">
+                    <div class="mat-caption text-gray-500">Ocupación</div>
+                    <div class="mb-3">Software Deloper</div>
+                  </div>
+                  <div fxFlex="25">
+                    <div class="mat-caption text-gray-500">Centro de Laborea</div>
+                    <div class="mb-3">Materia Gris</div>
+                  </div>
+                </div>
+                <!--
+                <div fxLayout="row">
+                  <div fxFlex="25">
+                    <div class="mat-caption text-gray-500">Persona expuesta politicamente</div>
+                    <div class="mb-3">--</div>
+                  </div>
+                </div>
+-->
+                
+                <h4 class="text-primary-500 mt-5 mb-3">Dirección</h4>
+                <div fxLayout="row">
+                  <div fxFlex="25">
+                    <div class="mat-caption text-gray-500">Tipo</div>
+                    <div class="mb-3">Casa</div>
+                  </div>
+                  <div fxFlex="25">
+                    <div class="mat-caption text-gray-500">País</div>
+                    <div class="mb-3">Perú</div>
+                  </div>
+                  <div fxFlex="25">
+                    <div class="mat-caption text-gray-500">Departamento</div>
+                    <div class="mb-3">Lima</div>
+                  </div>
+                  
+                </div>
+
+                <div fxLayout="row">
+                  <div fxFlex="25">
+                    <div class="mat-caption text-gray-500">Provincia</div>
+                    <div class="mb-3">Lima</div>
+                  </div>
+                  <div fxFlex="25">
+                    <div class="mat-caption text-gray-500">Distrito</div>
+                    <div class="mb-3">Miraflores</div>
+                  </div>
+                  <div fxFlex="25">
+                    <div class="mat-caption text-gray-500">Dirección</div>
+                    <div class="mb-3">Ca. Shell-Miraflores</div>
+                  </div>
+                </div>
+
+
+                <h4 class="text-primary-500 mt-5 mb-3">Correo Electrónico</h4>
+                <div fxLayout="row">
+                  <div fxFlex="25">
+                    <div class="mat-caption text-gray-500">Tipo</div>
+                    <div class="mb-3">Personal</div>
+                  </div>
+                  <div fxFlex="25">
+                    <div class="mat-caption text-gray-500">Correo</div>
+                    <div class="mb-3">dalvarado@gmail.com</div>
+                  </div>
+                  
+                </div>
+
+                <h4 class="text-primary-500 mt-5 mb-3">Número de Teléfono</h4>
+                <div fxLayout="row">
+                  <div fxFlex="25">
+                    <div class="mat-caption text-gray-500">Tipo</div>
+                    <div class="mb-3">Personal</div>
+                  </div>
+                  <div fxFlex="25">
+                    <div class="mat-caption text-gray-500">Número</div>
+                    <div class="mb-3">9854654121</div>
+                  </div>
+                  <div fxFlex="25">
+                    <div class="mat-caption text-gray-500">Anexo</div>
+                    <div class="mb-3">--</div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </mat-tab>
+
+        <mat-tab label="Cronograma de Pagos">
+          <div class="p-6">
+            Demo 2
+          </div>
+        </mat-tab>
+
+        <mat-tab label="Cobranzas">
+          <div class="p-6">
+            Evidencias
+          </div>
+        </mat-tab>
+
+        <mat-tab label="Siniestros">
+          <div class="p-6">
+            Demo 3
+          </div>
+        </mat-tab>
+
+        <mat-tab label="Evidencias">
+          <div class="p-6">
+            Evidencias
+          </div>
+        </mat-tab>
+
+        <mat-tab label="Cotización">
+          <div class="p-6">
+            Reportes
+          </div>
+        </mat-tab>
+
+      </mat-tab-group>
+    </div>
+  </vex-page-layout-content>
+
+</vex-page-layout>

@@ -1,0 +1,27 @@
+ng g m pages/cotizaciones --routing=true && ng g c pages/cotizaciones --skip-tests=true -m=pages/cotizaciones
+ng g m pages/clientes --routing=true && ng g c pages/clientes --skip-tests=false -m=pages/clientes
+ng g m pages/dashboard --routing=true && ng g c pages/dashboard --skip-tests=false -m=pages/dashboard
+
+
+ng g component pages/clientes/clientes-crear-editar
+
+
+
+
+ng g component pages/clientes/clientes-crear-editar
+
+
+
+ng g component pages/clientes/clientes-listar
+
+
+
+ng g component pages/cotizaciones/cotizaciones-listar
+
+ng g component pages/cotizaciones/cotizaciones-crear-editar
+
+ng g component pages/cotizaciones/cotizaciones-listar
+
+
+
+ng g component pages/polizas/

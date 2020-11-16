@@ -1,0 +1,80 @@
+<div class="p-6" *ngIf="cotizacion.badges[0].text != 'Borrador'">
+    <div fxLayout="column" fxLayoutGap="16px">
+        <div fxLayout="row" fxLayoutGap="16px" fxLayoutAlign="space-between center">
+            <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="32px">
+                <div>
+                    <img src="/assets/img/aseguradoras/la-positiva.png" alt="Archivo"
+                        style="width: 100%; max-width: 120px;">
+                </div>
+                <div>
+                    <h6 class="text-primary-500">Luisa Alberto Ruiz</h6>
+                    <small>lruiz@lapositiva.com.pe </small>
+                </div>
+            </div>
+            <div>
+                <button color="primary" mat-raised-button type="button" (click)="pickFile()">
+                    <ic-icon [icon]="icCloudUpload" class="ltr:-ml-1 rtl:-mr-1 ltr:mr-2 rtl:ml-2" inline="true"
+                        size="24px"></ic-icon>
+                    <span>Subir cotización</span>
+                </button>
+            </div>
+        </div>
+
+        <vex-custom-table (rowClick)="rowClick($event)" [columns]="tableColumns" [data]="cotizacionesPositiva">
+        </vex-custom-table>
+
+        <div fxLayout="row" fxLayoutGap="16px" fxLayoutAlign="space-between center">
+            <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="32px">
+                <div>
+                    <img src="/assets/img/aseguradoras/pacifico.png" alt="Archivo"
+                        style="width: 100%; max-width: 120px;">
+                </div>
+                <div>
+                    <h6 class="text-primary-500">Rebecca Jackson</h6>
+                    <small>rebecca.jackson@pacifico.com.pe </small>
+                </div>
+            </div>
+            <div>
+                <button color="primary" mat-raised-button type="button" (click)="pickFile()">
+                    <ic-icon [icon]="icCloudUpload" class="ltr:-ml-1 rtl:-mr-1 ltr:mr-2 rtl:ml-2" inline="true"
+                        size="24px"></ic-icon>
+                    <span>Subir cotización</span>
+                </button>
+            </div>
+        </div>
+
+        <vex-custom-table (rowClick)="rowClick($event)" [columns]="tableColumns" [data]="cotizacionesPacifico">
+        </vex-custom-table>
+
+        <div fxLayout="row" fxLayoutGap="16px" fxLayoutAlign="space-between center">
+            <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="32px">
+                <div>
+                    <img src="/assets/img/aseguradoras/protecta.png" alt="Archivo"
+                        style="width: 100%; max-width: 120px;">
+                </div>
+                <div>
+                    <h6 class="text-primary-500">Alberto Rosado</h6>
+                    <small>arosado@protectasecurity.com </small>
+                </div>
+            </div>
+            <div>
+                <button color="primary" mat-raised-button type="button" (click)="pickFile()">
+                    <ic-icon [icon]="icCloudUpload" class="ltr:-ml-1 rtl:-mr-1 ltr:mr-2 rtl:ml-2" inline="true"
+                        size="24px"></ic-icon>
+                    <span>Subir cotización</span>
+                </button>
+            </div>
+        </div>
+
+        <vex-custom-table (rowClick)="rowClick($event)" [columns]="tableColumns" [data]="cotizacionesProtecta">
+        </vex-custom-table>
+
+    </div>
+</div>
+
+<div class="p-6" *ngIf="cotizacion.badges[0].text === 'Borrador'" @fadeInUp fxFlex="auto" fxLayout="column"
+    fxLayoutAlign="center center">
+    <img class="m-8 h-48" src="assets/img/illustrations/idea.svg">
+    <h2 class="headline m-0 text-center">Debes completar la Información del Ramo.</h2>
+    <p class="mb-5">y "Procesar" esta solicitud para poder registrar las cotizaciones.</p>
+</div>

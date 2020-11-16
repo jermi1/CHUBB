@@ -1,0 +1,45 @@
+{
+    "cliente": {
+        "tipoCliente": [{
+            "id": 21,
+            "tipoCliente": "Persona Jurídica"
+        }],
+        "razonSocial": "Diego S.R.L",
+        "ruc": "023-545646545",
+        "fechaDeIngreso": "12/01/2020",
+        "documentos": [{
+            "tipo": [{
+                "id": 12,
+                "tipo": "DNI"
+            }],
+            "numero": "70554897"
+        }],
+        "informacionDeLey": [{
+            "laft":[{
+                "id": 11,
+                "laft": "Medio"
+            }],
+            "infocorp": [{
+                "id": 1,
+                "infocorp": "Medio"
+            }],
+            "actividadEconomica": "Developper",
+            "empresaPublica": false
+        }],
+        "datosDelContacto":[{
+            "documento": [{
+                "tipo":[{
+                    "id": 12,
+                    "tipo": "DNI"
+                }],
+                "numero": "70554897"
+            }],
+            "nombres": "Diego",
+            "apellidoPaterno": "Alvarado",
+            "apellidoMaterno": "Alatrista",
+            "correo": "dalvarado@gmail.com",
+            "telefono": "902574658",
+            "represenTanteLegal": false
+        }]
+    }
+ }

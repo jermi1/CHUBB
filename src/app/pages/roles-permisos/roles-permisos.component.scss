@@ -1,0 +1,29 @@
+
+.tarifario{
+  max-width: 500px;
+  margin: 40px auto;
+}
+.roles{
+  width: 900px;
+  margin: 0 auto;
+}
+
+.roles .mat-card-content{
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.mat-card-content {
+  display: flex;
+  justify-content: space-around;
+}
+
+.up .mat-slide-toggle{
+    margin-right: 100px; 
+    margin-bottom: 20px;
+}
+
+.avobe .mat-slide-toggle{
+    margin-right:  100px; 
+}

@@ -1,0 +1,41 @@
+<div class="p-6">
+  <div>
+    <img [src]="imagen" alt="Imagen" style="width: 100%;" class="mx-auto">
+    <div fxLayout="row" fxLayoutAlign="space-between top" class="mt-3">
+      <div>
+        <small [matMenuTriggerFor]="typeMenu">{{tipo}} <ic-icon [icon]="icArrowDropDown"
+            class="text-secondary flex-none inline-block" size="20px"></ic-icon>
+        </small>
+        <h5 class="">{{ descripcion }}</h5>
+      </div>
+      <div>
+        <button (click)="$event.stopPropagation()" [matMenuTriggerFor]="typeMenu" mat-icon-button type="button">
+          <mat-icon [icIcon]="icMoreVert"></mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<mat-menu #clienteMenu="matMenu" xPosition="before" yPosition="below">
+  <button mat-menu-item>
+    <mat-icon [icIcon]="icCloudDownload"></mat-icon>
+    <span>Descargar</span>
+  </button>
+  <button mat-menu-item>
+    <mat-icon [icIcon]="icDeleteForever"></mat-icon>
+    <span>Eliminar Archivo</span>
+  </button>
+</mat-menu>
+
+<mat-menu #typeMenu="matMenu" xPosition="before" yPosition="below">
+  <button mat-menu-item>
+    <span>DNI</span>
+  </button>
+  <button mat-menu-item>
+    <span>Carta de Nombramiento</span>
+  </button>
+  <button mat-menu-item>
+    <span>Archivo Adicional</span>
+  </button>
+</mat-menu>

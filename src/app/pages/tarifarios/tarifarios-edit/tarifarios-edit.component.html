@@ -1,0 +1,280 @@
+<!-- <vex-page-layout mode="card">
+  <vex-page-layout-header fxLayout="row" fxLayoutAlign="space-between center">
+    <div>
+      <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="25px">
+        <button [routerLink]="['/tarifarios']" mat-icon-button type="button">
+        </button>
+        <div>
+          <h2 class="title m-0">Cargar Tarifario</h2>
+        </div>
+      </div>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="15px">
+      <button color="primary-50" mat-stroked-button type="button">
+        <span>Cancelar</span>
+      </button>
+      <button color="primary-50" mat-raised-button type="button">Guardar Cambios</button>
+    </div>
+  </vex-page-layout-header>
+
+  <vex-page-layout-content vexContainer>
+
+    <mat-card class="tarifario">
+
+
+      <div class="inputs">
+        <h4>Selecciona un archivo</h4>
+        <button class="bg-orange-500 text-contrast-white mt-3" mat-raised-button type="button">
+          <ic-icon [icon]="icCloudUpload" class="ltr:-ml-1 rtl:-mr-1 ltr:mr-2 rtl:ml-2" inline="true" size="24px">
+          </ic-icon>
+          <span>Subir</span>
+        </button>
+      </div>
+      <mat-card-content>
+
+
+        <div class="inputs">
+          <h4>Aseguradora</h4>
+          <mat-form-field appearance="outline">
+            <mat-label>Selecciona</mat-label>
+            <mat-select>
+              <mat-option value="">Rimac</mat-option>
+              <mat-option value="">Sura</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="example-section">
+          <h4>Moneda</h4>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Selecciona</mat-label>
+            <mat-select>
+              <mat-option value="">Soles</mat-option>
+              <mat-option value="">Dolares</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+
+      <mat-card-content>
+
+        <div class="inputs">
+          <h4>Ramo</h4>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Selecciona</mat-label>
+            <mat-select>
+              <mat-option value="">Autos</mat-option>
+              <mat-option value="">Inmuebles</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="example-section">
+          <h4>Producto</h4>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Selecciona</mat-label>
+            <mat-select>
+              <mat-option value="">Opcion1</mat-option>
+              <mat-option value="">Opcion2</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+
+      <mat-card-content>
+
+        <div class="inputs">
+          <h4>Plan (módulo) (opcional)</h4>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Selecciona</mat-label>
+            <mat-select>
+              <mat-option value="">Opción1</mat-option>
+              <mat-option value="">Opción2</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="example-section">
+          <h4>Cliente (opcional)</h4>
+          <mat-form-field appearance="outline">
+            <mat-label>Selecciona</mat-label>
+            <mat-select>
+              <mat-option value="">Opción1</mat-option>
+              <mat-option value="">Opción2</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+      
+      <mat-card-content>
+        <div class="inputs">
+          <h4>Fecha de Inicio</h4>
+          <mat-form-field color="warn" appearance="outline">
+            <mat-label>Seleccione</mat-label>
+            <input matInput [matDatepicker]="picker1">
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+          </mat-form-field>
+        </div>
+        <div>
+          <h4>Fin</h4>
+          <mat-form-field color="warn" appearance="outline">
+            <mat-label>Seleccione</mat-label>
+            <input matInput [matDatepicker]="picker2">
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2 color="primary"></mat-datepicker>
+          </mat-form-field>
+
+        </div>
+      </mat-card-content>
+
+    </mat-card>
+
+
+
+
+  </vex-page-layout-content>
+</vex-page-layout> -->
+
+
+
+<vex-page-layout mode="card">
+    <vex-page-layout-header fxLayout="row" fxLayoutAlign="space-between center">
+        <div>
+            <!-- <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="25px">
+
+                <button [routerLink]="['/tarifarios']" mat-icon-button type="button">
+                  <mat-icon [icIcon]="icArrowBackIos"></mat-icon>
+                </button>
+        
+        
+                <div>
+                  <h2 class="title m-0">Editar Tarifario</h2>
+                </div>
+              </div> -->
+
+              
+            <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="25px">
+                <div>
+                    <h2 class="headline text-primary-contrast-500 m-0 flex items-center w-full max-w-xxxs mr-6">
+                        <!-- <ic-icon @scaleIn [icon]="icArrowBackIos" class="hidden sm:block"></ic-icon> -->
+                        <button [routerLink]="['/tarifarios']" mat-icon-button type="button">
+                            <mat-icon @scaleIn [icIcon]="icArrowBackIos"></mat-icon>
+                          </button>
+                        <span @fadeInRight class="ml-4 block">Editar Tarifario</span>
+                    </h2>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div class="flex items-center">
+                <button color="primary-50" mat-stroked-button type="button" class="mr-6" [routerLink]="['/tarifarios']">
+                    <span>Cancelar</span>
+                  </button>
+                  <button color="primary-50" mat-raised-button type="button" [routerLink]="['/tarifarios']">Guardar Cambios</button>
+
+
+                <!-- <div>
+                    <button mat-icon-button matTooltip="Filtros de búsqueda" type="button"
+                        class="ml-8 text-primary-contrast-500" (click)="openTableFilter()">
+                        <mat-icon [icIcon]="icArrowBackIos"></mat-icon>
+                    </button>
+                </div> -->
+                
+            </div>
+        </div>
+
+
+    </vex-page-layout-header>
+
+    <vex-page-layout-content>
+
+        <div class="card h-full overflow-hidden flex-auto tarifario-form">
+
+            <div class="p-6">
+                <div fxLayout.lt-sm="column" fxLayoutGap="16px" fxLayoutGap.lt-sm="0">
+
+                    <mat-form-field appearance="outline" fxFlex="50">
+                        <mat-label>Aseguradora</mat-label>
+                        <mat-select>
+                            <mat-option value="">Rimac</mat-option>
+                            <mat-option value="">Sura</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" fxFlex="50">
+                        <mat-label>Moneda</mat-label>
+                        <mat-select>
+                            <mat-option value="">Soles</mat-option>
+                            <mat-option value="">Dolares</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                </div>
+                <div fxLayout.lt-sm="column" fxLayoutGap="16px" fxLayoutGap.lt-sm="0">
+
+                    <mat-form-field appearance="outline" fxFlex="50">
+                        <mat-label>Ramo</mat-label>
+                        <mat-select>
+                          <mat-option value="">Autos</mat-option>
+                          <mat-option value="">Inmuebles</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                
+                      
+            
+            
+                      <mat-form-field appearance="outline" fxFlex="50">
+                        <mat-label>Producto</mat-label>
+                        <mat-select>
+                          <mat-option value="">Opcion1</mat-option>
+                          <mat-option value="">Opcion2</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+
+                </div>
+                <div fxLayout.lt-sm="column" fxLayoutGap="16px" fxLayoutGap.lt-sm="0">
+
+                    <mat-form-field appearance="outline" fxFlex="50">
+                        <mat-label>Plan</mat-label>
+                        <mat-select>
+                          <mat-option value="">General</mat-option>
+                          <mat-option value="">Corporativo</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+
+                      <mat-form-field appearance="outline" fxFlex="50">
+                        <mat-label>Buscar Cliente</mat-label>
+                        <input matInput >
+                        </mat-form-field>
+                </div>
+                <div fxLayout.lt-sm="column" fxLayoutGap="16px" fxLayoutGap.lt-sm="0">
+
+                    <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="50">
+                        <mat-label>Inicio de Vigencia</mat-label>
+                        <input (click)="formDatepickerRef.open()" (focus)="formDatepickerRef.open()"
+                            [matDatepicker]="formDatepickerRef" matInput readonly>
+                        <mat-datepicker-toggle [for]="formDatepickerRef" matSuffix></mat-datepicker-toggle>
+                        <mat-datepicker #formDatepickerRef></mat-datepicker>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="50">
+                        <mat-label>Fin de Vigencia</mat-label>
+                        <input (click)="formDatepickerRef2.open()" (focus)="formDatepickerRef2.open()"
+                            [matDatepicker]="formDatepickerRef2" matInput readonly>
+                        <mat-datepicker-toggle [for]="formDatepickerRef2" matSuffix></mat-datepicker-toggle>
+                        <mat-datepicker #formDatepickerRef2></mat-datepicker>
+                    </mat-form-field>
+            
+                </div>
+            </div>
+        </div>
+
+    </vex-page-layout-content>
+
+</vex-page-layout>

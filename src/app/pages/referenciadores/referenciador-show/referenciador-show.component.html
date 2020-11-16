@@ -1,0 +1,74 @@
+<vex-page-layout mode="card">
+
+  <vex-page-layout-header fxLayout="row" fxLayoutAlign="space-between center">
+
+    <div>
+      <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="25px">
+                   <button
+                    [routerLink]="['/referenciadores']"
+                      mat-icon-button
+                      type="button">
+                <mat-icon [icIcon]="icArrowBackIos"></mat-icon>
+              </button>
+
+        <div>
+          <h2 class="title m-0">Diego Alonso Alvarado Alatrista</h2>
+          <div>DNI 45055471 - Materia Gris</div>
+        </div>
+      </div>
+      
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="15px">
+     
+      <button color="primary-50" mat-stroked-button type="button">
+        <ic-icon [icon]="icMail"
+                 class="ltr:-ml-1 rtl:-mr-1 ltr:mr-2 rtl:ml-2"
+                 inline="true"
+                 size="24px"></ic-icon>
+        <span>diego@dalvarado.net</span>
+      </button>
+
+      <button color="primary-50" mat-stroked-button type="button">
+        <ic-icon [icon]="icPhone"
+                 class="ltr:-ml-1 rtl:-mr-1 ltr:mr-2 rtl:ml-2"
+                 inline="true"
+                 size="24px"></ic-icon>
+        <span>992765241</span>
+      </button>
+      <button (click)="$event.stopPropagation()"
+                      [matMenuTriggerFor]="referenciadorMenu"
+                      mat-icon-button
+                      type="button">
+                <mat-icon [icIcon]="icMoreVert"></mat-icon>
+              </button>
+      
+    </div>
+  </vex-page-layout-header> 
+
+  
+   <mat-menu #referenciadorMenu="matMenu" xPosition="before" yPosition="below">
+    <button mat-menu-item [routerLink]="['/referenciadores/editar']">
+      <mat-icon [icIcon]="icEdit"></mat-icon>
+      <span>Editar Referenciador</span>
+    </button>
+  
+    <button mat-menu-item>
+      <mat-icon [icIcon]="icDeleteForever"></mat-icon>
+      <span>Eliminar Referenciador</span>
+    </button>
+  </mat-menu>
+  
+  <vex-page-layout-content vexContainer>
+    <div class="card">
+      <nav mat-tab-nav-bar class="mat-tab-group">
+        <a mat-tab-link *ngFor="let link of navLinks" [routerLink]='link.path' routerLinkActive class="mat-tab-label"
+          #rla="routerLinkActive" [active]="rla.isActive">
+          {{link.label}}
+        </a>
+      </nav>
+      <router-outlet></router-outlet>
+    </div>
+  </vex-page-layout-content>
+
+</vex-page-layout>

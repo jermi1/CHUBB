@@ -1,0 +1,31 @@
+<vex-page-layout mode="card">
+    <vex-page-layout-header fxLayout="row" fxLayoutAlign="space-between center">
+      <div>
+        <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="25px">
+          <div>
+            <h2 class="title m-0">Configuración General</h2>
+          </div>
+        </div>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="15px">
+  
+        <button color="primary-50" mat-stroked-button type="button">
+          <span>Cancelar</span>
+        </button>
+  
+        <button color="primary-50" mat-raised-button type="button">Guardar Cambios</button>
+  
+      </div>
+    </vex-page-layout-header>
+  
+    <vex-page-layout-content vexContainer>
+
+      <div class="card">
+        <!--Imported from shared components-->
+        <vex-cliente-form [columnView]="false" [cliente]="cliente">
+        </vex-cliente-form>
+      </div>
+      
+    </vex-page-layout-content>
+  
+  </vex-page-layout>

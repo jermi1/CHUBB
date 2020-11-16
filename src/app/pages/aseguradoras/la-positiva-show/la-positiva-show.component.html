@@ -1,0 +1,204 @@
+<vex-page-layout mode="card">
+  <vex-page-layout-header fxLayout="row" fxLayoutAlign="space-between center">
+
+    <div>
+      <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="25px">
+        <button [routerLink]="['/aseguradoras']" mat-icon-button type="button">
+          <mat-icon [icIcon]="icArrowBackIos"></mat-icon>
+        </button>
+
+        <div>
+          <h2 class="title m-0">La Positiva</h2>
+        </div>
+      </div>
+
+    </div>
+
+  </vex-page-layout-header>
+
+  <vex-page-layout-content vexContainer>
+    <div class="card">
+
+      <mat-tab-group>
+
+        <mat-tab label="Ramos y código de intermediario">
+
+          <div class="p-6">
+            <h5 style="font-weight: 600;">
+              Todos los Ramos de La Positiva Seguros
+            </h5>
+            <div fxLayout="column" style="margin: 10px;">
+              <mat-slide-toggle color="warn" disabled="false">
+                Vehicular
+              </mat-slide-toggle>
+              <mat-slide-toggle color="warn" disabled="false">
+                Asistencia Médica
+              </mat-slide-toggle>
+              <mat-slide-toggle color="warn" disabled="false">
+                Accidentes Personales
+              </mat-slide-toggle>
+            </div>
+          </div>
+
+        </mat-tab>
+
+        <mat-tab label="Datos de contacto">
+          <div class="p-6">
+
+            <h4 class="text-primary-500 mb-5">Agregar contacto</h4>
+
+            <div class="pb-0" fxLayout.lt-sm="column" fxLayoutGap="16px">
+              <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="25">
+                <mat-label>Tipo de Contacto</mat-label>
+                <mat-select>
+                  <mat-option value="">Ejecutivo comercial</mat-option>
+                  <mat-option value="">Ejecutivo de Emisión</mat-option>
+                  <mat-option value="">Ejecutivo de Siniestros</mat-option>
+                </mat-select>
+              </mat-form-field>
+
+              <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="25">
+                <mat-label>Nombre</mat-label>
+                <input matInput>
+              </mat-form-field>
+
+              <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="25">
+                <mat-label>Apellido</mat-label>
+                <input matInput>
+              </mat-form-field>
+
+              <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="25">
+                <mat-label>Fecha de nacimiento (opcional)</mat-label>
+                <input (click)="formDatepickerRef.open()" (focus)="formDatepickerRef.open()"
+                  [matDatepicker]="formDatepickerRef" matInput readonly>
+                <mat-datepicker-toggle [for]="formDatepickerRef" matSuffix></mat-datepicker-toggle>
+                <mat-datepicker #formDatepickerRef></mat-datepicker>
+              </mat-form-field>
+
+
+            </div>
+
+            <div class="pb-0" fxLayout.lt-sm="column" fxLayoutGap="16px" fxLayoutGap.lt-sm="0">
+
+
+              <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="25">
+                <mat-label>Email</mat-label>
+                <input matInput>
+              </mat-form-field>
+
+              <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="25">
+                <mat-label>Teléfono</mat-label>
+                <input matInput>
+              </mat-form-field>
+
+              <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="25">
+                <mat-label>Estado</mat-label>
+                <mat-select>
+                  <mat-option value="">Activo</mat-option>
+                  <mat-option value="">Desactivo</mat-option>
+                </mat-select>
+              </mat-form-field>
+
+              <div fxFlex="25">
+                <button color="primary" mat-raised-button type="button" class="mt-3">Agregar Contacto</button>
+              </div>
+
+            </div>
+
+            <h4 class="text-primary-500 mb-5">Lista de contactos</h4>
+
+            <div class="mat2-table">
+              <div class="mat2-header-row">
+                <div class="mat2-header-cell">Nº</div>
+                <div class="mat2-header-cell">Tipo</div>
+                <div class="mat2-header-cell">Nombre</div>
+                <div class="mat2-header-cell">Email</div>
+                <div class="mat2-header-cell">Teléfono</div>
+                <div class="mat2-header-cell">Fecha de Nacimiento</div>
+                <div class="mat2-header-cell">Estado</div>
+                <div class="mat2-header-cell">Acciones</div>
+              </div>
+
+              <div class="mat2-row">
+                <div class="mat2-cell">1</div>
+                <div class="mat2-cell">Ejecutivo comercial</div>
+                <div class="mat2-cell">Alex McDonald</div>
+                <div class="mat2-cell">larry.mendoza@mail.com</div>
+                <div class="mat2-cell">(460)783-6629</div>
+                <div class="mat2-cell">03/06/1984</div>
+                <div class="mat2-cell">
+                  <div>
+                    <div class="rounded px-2 py-1 font-medium text-xs text-green-600 bg-green-100" fxFlex="none">
+                      Activo
+                    </div>
+                  </div>
+                </div>
+                <div class="mat2-cell">
+                  <div>
+                    <div>
+                      <button mat-button color="primary">Editar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mat2-row">
+                <div class="mat2-cell">2</div>
+                <div class="mat2-cell">Ejecutivo de Emisión</div>
+                <div class="mat2-cell">Rose Ford</div>
+                <div class="mat2-cell">mary.ann@mail.com</div>
+                <div class="mat2-cell">(517)829-4945</div>
+                <div class="mat2-cell">18/12/1987</div>
+                <div class="mat2-cell">
+                  <div>
+                    <div class="rounded px-2 py-1 font-medium text-xs text-green-600 bg-green-100" fxFlex="none">
+                      Activo
+                    </div>
+                  </div>
+                </div>
+                <div class="mat2-cell">
+                  <div>
+                    <div>
+                      <button mat-button color="primary">Editar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mat2-row">
+                <div class="mat2-cell">3</div>
+                <div class="mat2-cell">Ejecutivo de Siniestros</div>
+                <div class="mat2-cell">Amber Stewart</div>
+                <div class="mat2-cell">janet.lynch@mail.com</div>
+                <div class="mat2-cell">(167)968-5435</div>
+                <div class="mat2-cell">12/11/1950</div>
+                <div class="mat2-cell">
+                  <div>
+                    <div class="rounded px-2 py-1 font-medium text-xs text-green-600 bg-green-100" fxFlex="none">
+                      Activo
+                    </div>
+                  </div>
+                </div>
+                <div class="mat2-cell">
+                  <div>
+                    <div>
+                      <button mat-button color="primary">Editar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+        </mat-tab>
+
+        <mat-tab label="Tarifario">
+          <h3>Tarifario</h3>
+        </mat-tab>
+
+      </mat-tab-group>
+
+    </div>
+  </vex-page-layout-content>
+</vex-page-layout>

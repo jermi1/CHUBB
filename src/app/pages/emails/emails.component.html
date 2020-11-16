@@ -1,0 +1,13 @@
+<head>
+  
+</head>
+
+<button *ngIf='!isLoggedIn()' (click)="signIn()">sign in</button>
+
+<div *ngIf='isLoggedIn()'>
+    Logged
+</div>
+
+<div >
+<button (click)='getItems()'>list</button>
+</div>

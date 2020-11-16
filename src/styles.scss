@@ -1,0 +1,43 @@
+@import "~simplebar/dist/simplebar.css";
+@import "~highlight.js/styles/androidstudio.css";
+// Vex Core
+@import "./@vex/styles/core";
+
+/*
+  You can override any CSS Variable or style here
+  Example:
+
+  :root {
+   --sidenav-background: #333333;
+  }
+
+  All possible variables can be found in @vex/styles/core or by simply inspecting the element you want to change
+  in Chrome/Firefox DevTools
+*/
+
+.mat2-table {
+  display: block;
+  width: 100%;
+}
+
+.mat2-table .mat2-header-row {
+  color: rgba(0, 0, 0, 0.54);
+  text-transform: uppercase;
+  font-size: 13px;
+}
+.mat2-row,
+.mat2-header-row {
+  display: flex;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  align-items: center;
+  min-height: 48px;
+  padding: 0 24px;
+}
+
+.mat2-cell,
+.mat2-header-cell {
+  flex: 1;
+  overflow: hidden;
+  word-wrap: break-word;
+}

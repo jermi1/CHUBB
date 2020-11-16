@@ -1,0 +1,134 @@
+<div class="p-9">
+  <div class="pb-5" fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="16px">
+
+    <div>
+      <h4 class="text-primary-500">Dirección</h4>
+    </div>
+    <div>
+      <button mat-button color="primary">Agregar dirección</button>
+    </div>
+  </div>
+
+  <div class="pb-0" fxLayout.lt-sm="column" fxLayoutGap="16px" fxLayoutGap.lt-sm="0">
+    <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto" *ngIf="personaNatural">
+      <mat-label>Tipo</mat-label>
+      <mat-select>
+        <mat-option>Casa</mat-option>
+        <mat-option>Oficina</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto" *ngIf="!personaNatural">
+      <mat-label>Tipo</mat-label>
+      <mat-select>
+        <mat-option>Oficina princial</mat-option>
+        <mat-option>Oficina sucursal</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+      <mat-label>Pais</mat-label>
+      <input matInput>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+      <mat-label>Departamento</mat-label>
+      <input matInput>
+    </mat-form-field>
+  </div>
+
+  <div class="pb-0" fxLayout.lt-sm="column" fxLayoutGap="16px" fxLayoutGap.lt-sm="0">
+    <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+      <mat-label>Provincia</mat-label>
+      <input matInput>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+      <mat-label>Distrito</mat-label>
+      <input matInput>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+      <mat-label>Dirección</mat-label>
+      <input matInput>
+    </mat-form-field>
+
+    <div fxFlex="auto" class="pt-2">
+      <button [routerLink]="['/clientes']" mat-icon-button type="button">
+        <mat-icon [icIcon]="icMap"></mat-icon>
+      </button>
+
+    </div>
+
+  </div>
+
+  <div class="pb-5" fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="16px">
+
+    <div>
+      <h4 class="text-primary-500">Correo electrónico</h4>
+    </div>
+    <div>
+      <button mat-button color="primary">Agregar Correo</button>
+    </div>
+  </div>
+
+
+  <div class="pb-0" fxLayout.lt-sm="column" fxLayoutGap="16px" fxLayoutGap.lt-sm="0">
+
+    <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="15">
+      <mat-label>Tipo</mat-label>
+      <mat-select>
+        <mat-option>Personal</mat-option>
+        <mat-option>Trabajo</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="30">
+      <mat-label>Correo Electrónico</mat-label>
+      <input matInput>
+    </mat-form-field>
+
+    <div fxFlex="auto" class="pt-4 pl-5">
+        <mat-checkbox [checked]="false" color="primary">Correo principal</mat-checkbox>
+    </div>
+    <div fxFlex="auto" class="pt-4 pl-5">
+        <mat-checkbox [checked]="false" color="primary">Cobranzas</mat-checkbox>
+    </div>
+    <div fxFlex="auto" class="pt-4 pl-5">
+        <mat-checkbox [checked]="false" color="primary">Correspondencia</mat-checkbox>
+    </div>
+
+  </div>
+  
+  <div class="pb-5" fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="16px">
+
+    <div>
+      <h4 class="text-primary-500">Número de Teléfono</h4>
+    </div>
+    <div>
+      <button mat-button color="primary">Agregar Teléfono</button>
+    </div>
+  </div>
+
+
+  <div class="pb-0" fxLayout.lt-sm="column" fxLayoutGap="16px" fxLayoutGap.lt-sm="0">
+    <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="15">
+      <mat-label>Tipo</mat-label>
+      <mat-select>
+        <mat-option>Personal</mat-option>
+        <mat-option>Trabajo</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="30">
+      <mat-label>Número</mat-label>
+      <input matInput>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="15">
+      <mat-label>Anexo</mat-label>
+      <input matInput>
+    </mat-form-field>
+  </div>
+</div>
+

@@ -1,0 +1,77 @@
+<!-- Vista de tabs -->
+<mat-tab-group *ngIf="!columnView">
+
+    <mat-tab label="Infomación general">
+        <vex-cliente-form-general [cliente]="cliente"></vex-cliente-form-general>
+    </mat-tab>
+
+    <mat-tab label="Información de contacto">
+        <vex-cliente-form-contacto></vex-cliente-form-contacto>
+    </mat-tab>
+
+    <mat-tab label="Accionistas" *ngIf="isPersonaJuridica">
+        <vex-client-form-accionistas></vex-client-form-accionistas>
+    </mat-tab>
+
+    <mat-tab label="Clientes Vinculados">
+        <vex-cliente-form-vinculados></vex-cliente-form-vinculados>
+    </mat-tab>
+
+    <mat-tab label="Archivos" > 
+        <vex-cliente-form-archivos ></vex-cliente-form-archivos>
+    </mat-tab>
+
+    <mat-tab label="Comisiones" *ngIf="isReferenciador">
+        <vex-cliente-form-comisiones></vex-cliente-form-comisiones>
+    </mat-tab>
+
+    <mat-tab label="Accesos" *ngIf="isReferenciador">
+        <vex-cliente-form-accesos></vex-cliente-form-accesos>
+    </mat-tab>
+
+</mat-tab-group>
+
+<!-- Vista de columnas -->
+<div class="pb-4" fxLayout="row" fxLayoutGap="16px" *ngIf="columnView">
+    <div fxFlex="25" class="p-6">
+        <div class="py-2">
+            <button mat-button (click)="changeTab('informacion-general')">Información General</button>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="py-2">
+            <button mat-button (click)="changeTab('informacion-de-contacto')">Información de
+                Contacto
+            </button>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="py-2" *ngIf="isPersonaJuridica">
+            <button mat-button (click)="changeTab('accionistas')">Accionistas</button>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="py-2">
+            <button mat-button (click)="changeTab('clientes-vinculados')"></button>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="py-2">
+            <button mat-button (click)="changeTab('archivos')">Archivos</button>
+        </div>
+    </div>
+
+    <div fxFlex="auto">
+        
+        <vex-cliente-form-general [cliente]="cliente" *ngIf="current == 'informacion-general'">
+        </vex-cliente-form-general>
+
+        <vex-client-form-accionistas *ngIf="current == 'accionistas'">
+        </vex-client-form-accionistas>
+
+        <vex-cliente-form-contacto *ngIf="current == 'informacion-de-contacto'">
+        </vex-cliente-form-contacto>
+
+        <vex-cliente-form-vinculados *ngIf="current == 'clientes-vinculados'">
+        </vex-cliente-form-vinculados>
+
+        <vex-cliente-form-archivos *ngIf="current == 'archivos'">
+        </vex-cliente-form-archivos>  
+    </div>
+</div>

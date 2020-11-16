@@ -1,0 +1,31 @@
+<div class="aseguradora-thumb" [ngClass]="selected ? 'active' : '' ">
+<div>
+        <div class="aseguradora-thumb-header">
+            <img [src]="image" alt="Archivo" style="width: 100%; max-width: 120px;" class="mx-auto">
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between top" class="mt-3">
+            <div>
+                <h6 class="text-primary-500">{{ name }}</h6>
+                <small [matMenuTriggerFor]="typeMenu">{{ email }}</small>
+            </div>
+            <div>
+                <button (click)="$event.stopPropagation()" [matMenuTriggerFor]="typeMenu" mat-icon-button type="button">
+                    <mat-icon [icIcon]="icArrowDropDown"></mat-icon>
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<mat-menu #typeMenu="matMenu" xPosition="before" yPosition="below">
+    <button mat-menu-item>
+        <span>Craig Murphy</span>
+    </button>
+    <button mat-menu-item>
+        <span>Philip Lynch</span>
+    </button>
+    <button mat-menu-item>
+        <span>Johnny Gilbert</span>
+    </button>
+</mat-menu>

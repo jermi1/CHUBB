@@ -1,0 +1,22 @@
+<div class="pb-4" fxLayout="row" fxLayoutGap="16px">
+    <div fxFlex="25" class="p-6">
+        <div class="py-2">
+            <button mat-button (click)="changeTab('pendientes')">Pendientes</button>
+        </div>
+        
+        <div class="py-2">
+            <button mat-button (click)="changeTab('cierres')">Cierres</button>
+        </div>
+    </div>
+
+    <div fxFlex="auto">
+       
+        
+        <vex-comisiones-cierres *ngIf="current == 'cierres'">
+        </vex-comisiones-cierres>
+
+        <vex-comisiones-pendientes *ngIf="current == 'pendientes'">
+        </vex-comisiones-pendientes>
+
+    </div>
+</div>

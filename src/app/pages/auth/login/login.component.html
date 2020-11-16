@@ -1,0 +1,49 @@
+<div class="w-full h-full bg-pattern" fxLayout="column" fxLayoutAlign="center center">
+  <div @fadeInUp class="card overflow-hidden w-full max-w-xs">
+    <div class="p-6 pb-0" fxLayout="column" fxLayoutAlign="center center">
+      <div class="fill-current text-center">
+        <img class="w-50" src="assets/img/demo/LOGO.PNG">
+      </div>
+    </div>
+
+    <div class="text-center mt-4">
+      <h2 class="title m-0">Bienvenido</h2>
+      <h4 class="body-2 text-secondary m-0">Ingresa tus credenciales</h4>
+    </div>
+
+    <div [formGroup]="form" class="p-8" fxLayout="column" fxLayoutGap="16px">
+      <div fxFlex="auto" fxLayout="column">
+        <mat-form-field appearance="outline" fxFlex="grow">
+          <mat-label>Usuario</mat-label>
+          <input formControlName="email" matInput required>
+          <mat-error *ngIf="form.get('email').hasError('required')">Necesitas un nombre de usuario para ingresar</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline" fxFlex="grow">
+          <mat-label>Contraseña</mat-label>
+          <input [type]="inputType" formControlName="password" matInput required>
+          <button (click)="toggleVisibility()" mat-icon-button matSuffix matTooltip="Activar Visibilidad" type="button">
+            <mat-icon *ngIf="visible" [icIcon]="icVisibility"></mat-icon>
+            <mat-icon *ngIf="!visible" [icIcon]="icVisibilityOff"></mat-icon>
+          </button>
+          <mat-hint>Haga click en el ojo para activar la visibilidad</mat-hint>
+          <mat-error *ngIf="form.get('password').hasError('required')">Necesitas una contraseña para ingresar</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div fxLayout="row" fxLayoutAlign="space-between center">
+        <mat-checkbox class="caption" color="primary">Recuérdame</mat-checkbox>
+        <!--<a [routerLink]="['/forgot-password']" class="caption">Olvidé mi contraseña</a> -->
+      </div>
+
+      <button (click)="send()" color="primary" mat-raised-button type="button">
+        INGRESAR
+      </button>
+<!--
+      <p class="text-secondary text-center">
+        ¿No tienes una cuenta?<br/>
+        <a href="#" class="text-primary-500">Contáctate con el equipo de ventas</a>
+      </p>
+    -->
+    </div>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<vex-page-layout mode="card">
+    <vex-page-layout-content vexContainer>
+
+        <div fxLayout="row" fxLayoutGap="16px" fxLayoutAlign="end center">
+            <button color="primary" mat-raised-button type="button" class="mt-3" (click)="edit()">Realizar Cierre</button>
+        </div>
+
+        <div class="card">
+            <div class="p-6">
+                <div id="tabla-con-filtro">
+                    <div class="tabla">
+                        <vex-custom-table (rowClick)="rowClick($event)" [columns]="tableColumns" [data]="tableData"
+                            [searchStr]="searchStr$ | async">
+                        </vex-custom-table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </vex-page-layout-content>
+</vex-page-layout>

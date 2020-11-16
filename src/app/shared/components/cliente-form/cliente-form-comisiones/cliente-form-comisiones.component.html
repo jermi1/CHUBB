@@ -1,0 +1,86 @@
+
+<div class="p-6">
+
+  
+  <div class="pb-0" fxLayout.lt-sm="column" fxLayoutGap="16px" fxLayoutGap.lt-sm="0"
+    *ngIf="personaNatural">
+    <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="20">
+      <mat-label>Comisión general</mat-label>
+      <input matInput>
+    </mat-form-field>
+
+    
+  </div>
+
+
+
+  <div class="pb-5" fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="16px">
+
+    <div>
+      <h4 class="text-primary-500">Filtros de comisión</h4>
+    </div>
+    <div>
+      <button mat-button color="primary">Agregar Filtro de comisión</button>
+    </div>
+  </div>
+  
+
+
+
+  <div class="mat2-table">
+    <div class="mat2-header-row">
+      <div class="mat2-header-cell">Aseguradora</div>
+      <div class="mat2-header-cell">Cliente</div>
+      <div class="mat2-header-cell">Ramo</div>
+      <div class="mat2-header-cell">Tipo</div>
+      <div class="mat2-header-cell">Comisión</div>
+      <div class="mat2-header-cell">Estado</div>
+    </div>
+    <div class="mat2-row">
+      <div class="mat2-cell">Todas</div>
+      <div class="mat2-cell">Bluebox Trading SAC</div>
+      <div class="mat2-cell">Autos</div>
+      <div class="mat2-cell">Fijo</div>
+      <div class="mat2-cell">US$ 40</div>
+      <div class="mat2-cell">
+        <div>
+          <div class="rounded px-2 py-1 font-medium text-xs text-green-600 bg-green-100" fxFlex="none">
+            Activo
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="mat2-row">
+      <div class="mat2-cell">La Positiva</div>
+      <div class="mat2-cell">Todos</div>
+      <div class="mat2-cell">Todos</div>
+      <div class="mat2-cell">Porcentual</div>
+      <div class="mat2-cell">5%</div>
+      <div class="mat2-cell">
+        <div>
+          <div class="rounded px-2 py-1 font-medium text-xs text-green-600 bg-green-100" fxFlex="none">
+            Activo
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    
+  </div>
+
+
+
+
+
+
+
+  
+
+</div>
+
+
+
+

@@ -1,0 +1,78 @@
+<vex-page-layout mode="card">
+  <vex-page-layout-header fxLayout="row" fxLayoutAlign="space-between center">
+    <div>
+      <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="25px">
+        <div>
+          <h2 class="title m-0">Aseguradoras</h2>
+        </div>
+      </div>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="15px">
+      <button color="primary-50" mat-stroked-button type="button">
+        <span>Cancelar</span>
+      </button>
+      <button color="primary-50" mat-raised-button type="button">Guardar Cambios</button>
+    </div>
+  </vex-page-layout-header>
+
+  <vex-page-layout-content vexContainer>
+    <div class="card" style="width: 100%; max-width: 900px; margin: 0 auto">
+
+      <div class="p-6">
+        <mat-grid-list cols="4" rowHeight="3:2" [gutterSize]="'15px'">
+
+          <mat-grid-tile style="border: 1px solid #ddd; border-radius: 6px;">
+            <button [routerLink]="['/aseguradoras/lapositiva']">
+              <img class="m-2 h-20" src="assets/img/aseguradoras/la-positiva.png">
+              Código: 99001
+            </button>
+          </mat-grid-tile>
+
+          <mat-grid-tile style="border: 1px solid #ddd; border-radius: 6px;">
+            <button [routerLink]="['/aseguradoras/lapositiva']">
+
+              <img class="m-2 h-20" src="assets/img/aseguradoras/pacifico.png">
+              Código: 99002
+            </button>
+
+          </mat-grid-tile>
+
+          <mat-grid-tile style="border: 1px solid #ddd; border-radius: 6px;">
+            <button [routerLink]="['/aseguradoras/lapositiva']">
+              <img class="m-2 h-20" src="assets/img/aseguradoras/protecta.png">
+              Código: 99003
+            </button>
+          </mat-grid-tile>
+
+          <mat-grid-tile style="border: 1px solid #ddd; border-radius: 6px;">
+            <button [routerLink]="['/aseguradoras/lapositiva']">
+              <img class="m-2 h-20" src="assets/img/aseguradoras/sura.png">
+              Código: 99004
+            </button>
+          </mat-grid-tile>
+
+          <!-- <mat-grid-tile style="border: 1px solid gray;">
+              <button>
+                <img class="m-2 h-20" >
+                <h4>Rimac</h4>
+              </button>
+
+            </mat-grid-tile>
+
+            <mat-grid-tile style="border: 1px solid gray;">
+              <button>
+                
+                <img class="m-2 h-20">
+                Vincular aseguradoras
+              </button>
+            </mat-grid-tile> -->
+
+        </mat-grid-list>
+      </div>
+    </div>
+
+
+
+
+  </vex-page-layout-content>
+</vex-page-layout>

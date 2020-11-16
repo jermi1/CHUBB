@@ -1,0 +1,118 @@
+<div>
+    <div fxLayout="row" fxLayoutAlign="start center" mat-dialog-title>
+        <h2 class="headline m-0" fxFlex="auto">Seleccionar archivo</h2>
+
+        <button class="text-secondary" mat-dialog-close mat-icon-button type="button">
+            <mat-icon [icIcon]="icClose"></mat-icon>
+        </button>
+    </div>
+
+    <mat-divider class="-mx-6 text-border"></mat-divider>
+
+    <mat-dialog-content fxLayout="column" class="-mx-6">
+
+        <mat-tab-group>
+            <mat-tab label="Bandeja de Email">
+
+                <div class="bg-card rounded-full border px-4 mt-5" fxFlex="auto" fxLayoutAlign="start center">
+                    <mat-icon [icIcon]="icSearch"></mat-icon>
+                    <input class="px-4 py-3 border-0 outline-none w-full bg-transparent"
+                        placeholder="Buscar en la bandeja de diego.alvarado@materiagris.pe" type="search">
+                </div>
+
+                <div class="email-list">
+                    <div class="email-list-item py-4">
+                        <div class="email-list-item-image">
+                            <img mat-list-avatar src="assets/img/avatars/1.jpg">
+                        </div>
+                        <div class="email-list-item-content">
+                            <div class="flex justify-between">
+                                <h4>cotizador1@lapositiva.com.pe</h4>
+                                <span class="text-xs text-gray-500">1h</span>
+                            </div>
+                            <p class="text-xs text-gray-700">RE: COTIZACION AUTOS QRL-987</p>
+                            <div class="email-list-item-attach mt-3">
+                                <button class="rounded-full" color="primary" mat-raised-button type="button">
+                                    <span>cotizacion-000909.pdf</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <mat-divider class="text-border"></mat-divider>
+
+                    <div class="email-list-item py-4">
+                        <div class="email-list-item-image">
+                            <img mat-list-avatar src="assets/img/avatars/2.jpg">
+                        </div>
+                        <div class="email-list-item-content">
+                            <div class="flex justify-between">
+                                <h4>jperez@pacifico.com.pe</h4>
+                                <span class="text-xs text-gray-500">2d</span>
+                            </div>
+                            <p class="text-xs text-gray-700">RE: SOLICITUD DE COTIZACIÓN</p>
+                            <div class="email-list-item-attach mt-3">
+                                <button class="rounded-full" color="primary" mat-raised-button type="button">
+                                    <span>C455001.pdf</span>
+                                </button>
+                                <button class="rounded-full" color="primary" mat-raised-button type="button">
+                                    <span>image.png</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <mat-divider class="text-border"></mat-divider>
+
+                    <div class="email-list-item py-4">
+
+                        <div class="email-list-item-image">
+                            <img mat-list-avatar src="assets/img/avatars/3.jpg">
+                        </div>
+                        <div class="email-list-item-content">
+                            <div class="flex justify-between">
+                                <h4>jperez@pacifico.com.pe</h4>
+                                <span class="text-xs text-gray-500">2d</span>
+                            </div>
+                            <p class="text-xs text-gray-700">RE: SOLICITUD DE COTIZACIÓN</p>
+                            <div class="email-list-item-attach mt-3">
+                                <button class="rounded-full" color="primary" mat-raised-button type="button">
+                                    <span>C-BROKER-0000234.pdf</span>
+                                </button>
+                                <button class="rounded-full" color="primary" mat-raised-button type="button">
+                                    <span>image.png</span>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <mat-divider class="text-border"></mat-divider>
+
+                </div>
+
+                <div class="flex justify-center mt-4">
+                    <button mat-button mat-dialog-close type="button">Siguiente</button>
+                    <button mat-button mat-dialog-close type="button">Anterior</button>
+                </div>
+                
+
+            </mat-tab>
+            <mat-tab label="Desde computadora">
+
+                <div class="upload-holder mt-6">
+                    <div>
+                      <ic-icon [icon]="icCloudUpload" class="text-secondary flex-none" size="48px"></ic-icon>
+                      <h6>Subir archivo</h6>
+                      <p>Selecciona o arresta un archivo</p>
+                    </div>
+                  </div>
+
+
+            </mat-tab>
+        </mat-tab-group>
+
+    </mat-dialog-content>
+
+    <!-- <mat-dialog-actions align="center">
+        <button mat-button mat-dialog-close type="button">Siguiente</button>
+        <button mat-button mat-dialog-close type="button">Anterior</button>
+    </mat-dialog-actions> -->
+</div>

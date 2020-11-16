@@ -1,0 +1,159 @@
+<vex-page-layout mode="card">
+
+    <!-- <vex-page-layout-header fxLayout="column" fxLayoutAlign="center start">
+    <div vexContainer>
+      <h2 class="title m-0">Diego Alonso Alvarado Alatrista</h2>
+      <vex-breadcrumbs [crumbs]="['Page Layouts', 'Card', 'Large Header & Tabbed']"></vex-breadcrumbs>
+    </div>
+  </vex-page-layout-header> -->
+
+    <vex-page-layout-header fxLayout="row" fxLayoutAlign="space-between center">
+
+        <div>
+            <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="25px">
+
+                <button [routerLink]="['/siniestros']" mat-icon-button type="button">
+                    <mat-icon [icIcon]="icArrowBackIos"></mat-icon>
+                </button>
+
+                <div>
+                    <h2 class="title m-0">Agregar / Editar Siniestro</h2>
+                </div>
+            </div>
+
+        </div>
+        <div fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="15px">
+
+            <button color="primary-50" mat-stroked-button type="button" [routerLink]="['/siniestros']">
+                <span>Cancelar</span>
+            </button>
+
+            <button color="primary-50" mat-raised-button type="button" [routerLink]="['/siniestros']">Guardar
+                Cambios</button>
+
+        </div>
+    </vex-page-layout-header>
+
+    <vex-page-layout-content vexContainer>
+        <div class="card" style="width: 100%; margin: 0 auto;">
+
+            <div class="p-6">
+
+                <div fxLayout="row" fxLayoutGap="8px">
+                    <div class="pb-4" fxLayout="column" fxLayoutGap="16px">
+                        <mat-radio-group color="accent" fxLayout="row" fxLayoutGap="16px">
+                            <mat-radio-button [checked]="true" color="primary" value="1">Siniestro Activo
+                            </mat-radio-button>
+                            <mat-radio-button color="primary" value="2">Cerrado</mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+                </div>
+
+
+                <div fxLayout="row" fxLayoutGap="8px">
+
+                    <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+                        <mat-label>Póliza</mat-label>
+                        <input matInput>
+                        <mat-icon [icIcon]="icSearch" matSuffix></mat-icon>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+                        <mat-label>Número de Certificado</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+                        <mat-label>Causa del Siniestro</mat-label>
+                        <mat-select>
+                            <mat-option>...</mat-option>
+                            <mat-option>...</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                </div>
+
+                
+
+                <div fxLayout="row" fxLayoutGap="8px">
+
+                    <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+                        <mat-label>Fecha de Ocurrencia</mat-label>
+                        <input (click)="formDatepickerRef2.open()" (focus)="formDatepickerRef2.open()"
+                            [matDatepicker]="formDatepickerRef2" matInput readonly>
+                        <mat-datepicker-toggle [for]="formDatepickerRef2" matSuffix></mat-datepicker-toggle>
+                        <mat-datepicker #formDatepickerRef2></mat-datepicker>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+                        <mat-label>Fecha de Denuncia</mat-label>
+                        <input (click)="formDatepickerRef.open()" (focus)="formDatepickerRef.open()"
+                            [matDatepicker]="formDatepickerRef" matInput readonly>
+                        <mat-datepicker-toggle [for]="formDatepickerRef" matSuffix></mat-datepicker-toggle>
+                        <mat-datepicker #formDatepickerRef></mat-datepicker>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+                        <mat-label>Cobertura Afectada</mat-label>
+                        <mat-select>
+                            <mat-option>Incendio</mat-option>
+                            <mat-option>Robo</mat-option>
+                            <mat-option>...</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                </div>
+
+
+                <div fxLayout="row" fxLayoutGap="8px">
+
+                    <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+                        <mat-label>Monto de Reserva</mat-label>
+                        <input matInput>
+                        <mat-icon [icIcon]="icSearch" matSuffix></mat-icon>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+                        <mat-label>Monto Pagado</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+                        <mat-label>Fecha de Pago de la Aseguradora</mat-label>
+                        <input (click)="formDatepickerRef3.open()" (focus)="formDatepickerRef3.open()"
+                            [matDatepicker]="formDatepickerRef3" matInput readonly>
+                        <mat-datepicker-toggle [for]="formDatepickerRef3" matSuffix></mat-datepicker-toggle>
+                        <mat-datepicker #formDatepickerRef3></mat-datepicker>
+                    </mat-form-field>
+
+                </div>
+
+
+                <div fxLayout="row" fxLayoutGap="8px">
+                    <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+                        <mat-label>Nombre del Ajustador</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+                        <mat-label>Observaciones</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+
+                </div>
+
+
+
+            </div>
+            <!-- <mat-tab-group>
+        <mat-tab label="Póliza">
+          <div class="p-6">
+            Detalles del siniestro
+          </div>
+        </mat-tab>
+
+      </mat-tab-group> -->
+
+        </div>
+    </vex-page-layout-content>
+
+</vex-page-layout>

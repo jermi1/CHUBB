@@ -1,0 +1,69 @@
+<div class="p-9">
+    <div *ngIf="!personaNatural">
+        <div class="pb-5" fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="16px">
+
+            <div>
+                <h4 class="text-primary-500">Accionistas</h4>
+            </div>
+            
+        </div>
+
+        <div class="pb-0" fxLayout.lt-sm="column" fxLayoutGap="16px" fxLayoutGap.lt-sm="0">
+            <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="15">
+                <mat-label>Tipo</mat-label>
+                <mat-select>
+                    <mat-option value="1">DNI</mat-option>
+                    <mat-option value="2">C.E.</mat-option>
+                    <mat-option value="3">Pasaporte</mat-option>
+                    <mat-option value="4">Otros</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="25">
+                <mat-label>Número de Documento</mat-label>
+                <input matInput>
+            </mat-form-field>
+        </div>
+
+        <div class="pb-0" fxLayout.lt-sm="column" fxLayoutGap="16px" fxLayoutGap.lt-sm="0">
+
+            <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+                <mat-label>Nombre</mat-label>
+                <input matInput>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+                <mat-label>Apellido Paterno</mat-label>
+                <input matInput>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+                <mat-label>Apellido Materno</mat-label>
+                <input matInput>
+            </mat-form-field>
+
+        </div>
+
+        <div class="pb-0" fxLayout.lt-sm="column" fxLayoutGap="16px" fxLayoutGap.lt-sm="0">
+
+            <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+                <mat-label>Correo Electrónico</mat-label>
+                <input matInput>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+                <mat-label>Teléfono</mat-label>
+                <input matInput>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+                <mat-label>Acciones</mat-label>
+                <input matInput>
+            </mat-form-field>
+
+        </div>
+
+
+    </div>
+
+</div>

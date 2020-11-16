@@ -1,0 +1,16 @@
+.aseguradora-thumb {
+    border: 1px solid #dddddd;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+
+.aseguradora-thumb > div {
+    border: 1px solid #ffffff;
+    border-radius: .42rem;
+    padding: 1rem;
+}
+
+.aseguradora-thumb.active,
+.aseguradora-thumb.active > div {
+    border: 1px solid #EC6B2E;
+}

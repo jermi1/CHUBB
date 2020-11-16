@@ -1,0 +1,62 @@
+<div class="p-6">
+
+    <div id="tabla-con-filtro">
+        <div class="filtro">
+            
+            <div>
+                <mat-form-field appearance="outline" class="small-padding block">
+                    <mat-label>Ramo</mat-label>
+                    <mat-select [(value)]="aseguradoraSeleccionada">
+                        <mat-option value="all">Todos</mat-option>
+                        <mat-option value="PE">Vida</mat-option>
+                        <mat-option value="AR">Autos</mat-option>
+                        <mat-option value="BR">SCTR</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div>
+
+                <mat-form-field appearance="outline" class="small-padding block">
+                    <mat-label>Referenciador</mat-label>
+                    <mat-select [(value)]="aseguradoraSeleccionada">
+                        <mat-option value="all">Todos</mat-option>
+                        <mat-option value="PE">Juan Perez</mat-option>
+                        <mat-option value="AR">Diego Alonso Alvarado Alatrista</mat-option>
+                        <mat-option value="BR">Juan Carlos Hernandez Alvarado</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline" class="small-padding block">
+                    <mat-label>Fecha Inicio</mat-label>
+                    <input (click)="formDatepickerRef.open()" (focus)="formDatepickerRef.open()"
+                        [matDatepicker]="formDatepickerRef" matInput readonly>
+                    <mat-datepicker-toggle [for]="formDatepickerRef" matSuffix></mat-datepicker-toggle>
+                    <mat-datepicker #formDatepickerRef></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline" class="small-padding block">
+                    <mat-label>Fecha Fin</mat-label>
+                    <input (click)="formDatepickerRef2.open()" (focus)="formDatepickerRef2.open()"
+                        [matDatepicker]="formDatepickerRef2" matInput readonly>
+                    <mat-datepicker-toggle [for]="formDatepickerRef2" matSuffix></mat-datepicker-toggle>
+                    <mat-datepicker #formDatepickerRef2></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <div>
+                <button class="w-full" color="primary" mat-raised-button type="button">
+                    <ic-icon [icon]="icFilterList" class="ltr:mr-3 rtl:ml-3" inline="true" size="18px"></ic-icon>
+                    <span>FILTRAR</span>
+                  </button>
+            </div>
+            
+        </div>
+        <div class="tabla">
+            <vex-custom-table (rowClick)="rowClick($event)" [columns]="tableColumns" [data]="tableData"
+                [searchStr]="searchStr$ | async">
+            </vex-custom-table>
+        </div>
+    </div>
+
+</div>

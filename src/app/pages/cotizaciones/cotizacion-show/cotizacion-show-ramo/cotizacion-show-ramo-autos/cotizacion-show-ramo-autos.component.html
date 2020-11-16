@@ -1,0 +1,239 @@
+<div class="pt-9 pl-9 pr-9 pb-2">
+
+    <div fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="8px">
+
+        <div fxLayout="row" fxLayoutGap="8px" fxFlex="35">
+
+            <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="30">
+                <mat-label>Versión</mat-label>
+                <mat-select (value)="3">
+                    <mat-option value="3">3</mat-option>
+                    <mat-option value="2">2</mat-option>
+                    <mat-option value="1">1</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+                <mat-label>Inicio de Vigencia</mat-label>
+                <input (click)="formDatepickerRef2.open()" (focus)="formDatepickerRef2.open()"
+                    [matDatepicker]="formDatepickerRef2" matInput readonly>
+                <mat-datepicker-toggle [for]="formDatepickerRef2" matSuffix></mat-datepicker-toggle>
+                <mat-datepicker #formDatepickerRef2></mat-datepicker>
+            </mat-form-field>
+
+            <div fxFlex="auto" class="pt-4 pl-5">
+                <mat-checkbox [checked]="false" color="primary">Es flota</mat-checkbox>
+            </div>
+
+        </div>
+
+        <div>
+            <button color="primary" mat-raised-button type="button">
+                <ic-icon [icon]="icCloudUpload" class="ltr:-ml-1 rtl:-mr-1 ltr:mr-2 rtl:ml-2" inline="true" size="24px">
+                </ic-icon>
+                <span>Cargar archivo Excel</span>
+            </button>
+        </div>
+
+    </div>
+
+    <div *ngFor="let vehiculo of vehiculos; let i = index" class="mb-6">
+
+        <mat-divider></mat-divider>
+
+        <div class="my-4">
+            <h4 class="text-primary-500">Datos del Vechículo</h4>
+
+            <div class="mt-4" fxLayout="row" fxLayoutGap="8px">
+
+                <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+                    <mat-label>Placa</mat-label>
+                    <input matInput>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+                    <mat-label>Marca</mat-label>
+                    <mat-select>
+                        <mat-option>Toyota</mat-option>
+                        <mat-option>Hyndai</mat-option>
+                        <mat-option>Kia</mat-option>
+                        <mat-option>...</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+                    <mat-label>Modelo</mat-label>
+                    <mat-select>
+                        <mat-option>Yaris</mat-option>
+                        <mat-option>Corolla</mat-option>
+                        <mat-option>Trueno</mat-option>
+                        <mat-option>...</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+                    <mat-label>Clase</mat-label>
+                    <mat-select>
+                        <mat-option>Sedan</mat-option>
+                        <mat-option>Camioneta</mat-option>
+                        <mat-option>...</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+                    <mat-label>Uso</mat-label>
+                    <mat-select>
+                        <mat-option>Particular</mat-option>
+                        <mat-option>Taxi</mat-option>
+                        <mat-option>...</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+            </div>
+
+            <div fxLayout="row" fxLayoutGap="8px">
+                <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+                    <mat-label>Nº de Serie</mat-label>
+                    <input matInput>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+                    <mat-label>Nº del Motor</mat-label>
+                    <input matInput>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+                    <mat-label>Nº de Rodaje</mat-label>
+                    <input matInput>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+                    <mat-label>Nº de Ocupantes</mat-label>
+                    <input matInput>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+                    <mat-label>Año de Fabricación</mat-label>
+                    <mat-select>
+                        <mat-option>2019</mat-option>
+                        <mat-option>2018</mat-option>
+                        <mat-option>2017</mat-option>
+                        <mat-option>...</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+                    <mat-label>Año de Antiguedad</mat-label>
+                    <mat-select>
+                        <mat-option>2019</mat-option>
+                        <mat-option>2018</mat-option>
+                        <mat-option>2017</mat-option>
+                        <mat-option>...</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <div fxLayout="row" fxLayoutGap="32px">
+                <mat-checkbox [checked]="true" color="primary">Timón Cambiado</mat-checkbox>
+                <mat-checkbox [checked]="vehiculo.inspeccion" color="primary"
+                    (change)="cambioInspeccion($event, vehiculo)">Requiere Inspeción</mat-checkbox>
+                <mat-checkbox [checked]="vehiculo.gps" color="primary" (change)="cambioGPS($event, vehiculo)">Requiere
+                    GPS</mat-checkbox>
+            </div>
+
+        </div>
+
+        <div *ngIf="vehiculo.gps">
+            <h4 class="text-primary-500">GPS</h4>
+            <div fxLayout="row" fxLayoutGap="8px">
+
+                <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="20">
+                    <mat-label>Vigencia</mat-label>
+                    <input (click)="formDatepickerRef3.open()" (focus)="formDatepickerRef3.open()"
+                        [matDatepicker]="formDatepickerRef3" matInput readonly>
+                    <mat-datepicker-toggle [for]="formDatepickerRef3" matSuffix></mat-datepicker-toggle>
+                    <mat-datepicker #formDatepickerRef3></mat-datepicker>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" fxFlex="40">
+                    <mat-label>Proveedor</mat-label>
+                    <input matInput>
+                </mat-form-field>
+
+            </div>
+        </div>
+
+        <div *ngIf="vehiculo.inspeccion">
+            <h4 class="text-primary-500">Coordinación de inspección</h4>
+            <div fxLayout="row" fxLayoutGap="8px">
+
+                <mat-form-field appearance="outline" fxFlex="40">
+                    <mat-label>Persona de Contacto</mat-label>
+                    <input matInput>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" fxFlex="20">
+                    <mat-label>Teléfono</mat-label>
+                    <input matInput>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" fxFlex="20">
+                    <mat-label>Referencia de día y hora</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+
+        </div>
+
+        <div>
+            <h4 class="text-primary-500">SOAT</h4>
+
+            <div fxLayout="row" fxLayoutGap="8px">
+
+                <mat-form-field appearance="outline" fxFlex="20">
+                    <mat-label>Nº de Póliza</mat-label>
+                    <input matInput>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="20">
+                    <mat-label>Compañia Aseguradora</mat-label>
+                    <mat-select>
+                        <mat-option>La Positiva Seguros</mat-option>
+                        <mat-option>Rimac Seguros</mat-option>
+                        <mat-option>Paífico Seguros</mat-option>
+                        <mat-option>Mapfre</mat-option>
+                        <mat-option>Protecta</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="20">
+                    <mat-label>Vigencia</mat-label>
+                    <input (click)="formDatepickerRef4.open()" (focus)="formDatepickerRef4.open()"
+                        [matDatepicker]="formDatepickerRef4" matInput readonly>
+                    <mat-datepicker-toggle [for]="formDatepickerRef4" matSuffix></mat-datepicker-toggle>
+                    <mat-datepicker #formDatepickerRef4></mat-datepicker>
+                </mat-form-field>
+
+            </div>
+        </div>
+
+        <button color="primary" mat-raised-button type="button">
+            <ic-icon [icon]="icCloudUpload" class="ltr:-ml-1 rtl:-mr-1 ltr:mr-2 rtl:ml-2" inline="true" size="24px">
+            </ic-icon>
+            <span>Subir Tarjeta de Propiedad</span>
+        </button>
+
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <div class="mb-6 flex justify-end">
+        <button color="primary" mat-raised-button type="button" (click)="agregarVehiculo()" class="mt-6">
+            <ic-icon [icon]="icAddCircleOutline" class="ltr:-ml-1 rtl:-mr-1 ltr:mr-2 rtl:ml-2" inline="true"
+                size="24px">
+            </ic-icon>
+            <span>Agregar Vehículo</span>
+        </button>
+    </div>
+
+</div>

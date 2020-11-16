@@ -1,0 +1,193 @@
+<vex-page-layout mode="card">
+    <vex-page-layout-header fxLayout="row" fxLayoutAlign="space-between center">
+        <div>
+            <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="25px">
+                <div>
+                    <h2 class="headline text-primary-contrast-500 m-0 flex items-center w-full max-w-xs mr-6">
+                        <ic-icon @scaleIn [icon]="coins" class="hidden sm:block"></ic-icon>
+                        <span @fadeInRight class="ml-4 block w-full">Cierres de Comisiones</span>
+                    </h2>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="flex items-center">
+                <div>
+                    <button mat-icon-button matTooltip="Descargar en formato Excell" type="button"
+                        class="ml-4 text-primary-contrast-500">
+                        <mat-icon [icIcon]="icCloudDownload"></mat-icon>
+                    </button>
+                </div>
+                <div>
+                    <button class="rounded-full ml-4" color="primary-50" mat-stroked-button type="button" (click)="openComision()">
+                        <ic-icon [icon]="icAddCircle"
+                                 class="ltr:-ml-1 rtl:-mr-1 ltr:mr-2 rtl:ml-2"
+                                 inline="true"
+                                 size="24px"></ic-icon>
+                        <span>Realizar Cierre</span>
+                      </button>
+                </div>
+            </div>
+        </div>
+
+    </vex-page-layout-header>
+
+    <vex-page-layout-content vexContainer>
+
+        <div class="card">
+
+            <div class="p-6">
+
+                
+                <h5 class="text-primary-500 pb-2">Filtros de Búsqueda</h5>
+                
+                <div class="pb-0" fxLayout.lt-sm="column" fxLayoutGap="16px" fxLayoutGap.lt-sm="0">
+
+                    <mat-form-field appearance="outline" class="small-padding block vex-flex-form-field" fxFlex="20">
+                        <mat-label>Aseguradora</mat-label>
+                        <mat-select [(value)]="aseguradoraSeleccionada">
+                            <mat-option value="all">Todas</mat-option>
+                            <mat-option value="PE">La Positiva</mat-option>
+                            <mat-option value="AR">Mapfre</mat-option>
+                            <mat-option value="BR">Pacífico</mat-option>
+                            <mat-option value="BR">Rimac</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                
+                    <mat-form-field appearance="outline" class="small-padding block vex-flex-form-field" fxFlex="20">
+                        <mat-label>Fecha Inicio</mat-label>
+                        <input (click)="formDatepickerRef.open()" (focus)="formDatepickerRef.open()" [matDatepicker]="formDatepickerRef"
+                            matInput readonly>
+                        <mat-datepicker-toggle [for]="formDatepickerRef" matSuffix></mat-datepicker-toggle>
+                        <mat-datepicker #formDatepickerRef></mat-datepicker>
+                    </mat-form-field>
+                
+                    <mat-form-field appearance="outline" class="small-padding block vex-flex-form-field" fxFlex="20">
+                        <mat-label>Fecha Fin</mat-label>
+                        <input (click)="formDatepickerRef2.open()" (focus)="formDatepickerRef2.open()"
+                            [matDatepicker]="formDatepickerRef2" matInput readonly>
+                        <mat-datepicker-toggle [for]="formDatepickerRef2" matSuffix></mat-datepicker-toggle>
+                        <mat-datepicker #formDatepickerRef2></mat-datepicker>
+                    </mat-form-field>
+                
+                    <mat-form-field appearance="outline" class="small-padding block vex-flex-form-field" fxFlex="20">
+                        <mat-label>Estado</mat-label>
+                        <mat-select [(value)]="aseguradoraSeleccionada">
+                            <mat-option value="todos">Todos</mat-option>
+                            <mat-option value="pagados">Pendiente</mat-option>
+                            <mat-option value="pendientes">Cobrados</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                
+                </div>
+
+
+
+                <mat-divider></mat-divider>
+
+                <vex-custom-table (rowClick)="rowClick($event)" [columns]="tableColumns" [data]="tableData"
+                            [searchStr]="searchStr$ | async">
+                        </vex-custom-table>
+
+                <!-- <div id="tabla-con-filtro">
+                    <div class="filtro">
+                        <div>
+                            <mat-form-field appearance="outline" class="small-padding block">
+                                <mat-label>Aseguradora</mat-label>
+                                <mat-select [(value)]="aseguradoraSeleccionada">
+                                    <mat-option value="all">Todas</mat-option>
+                                    <mat-option value="PE">La Positiva</mat-option>
+                                    <mat-option value="AR">Mapfre</mat-option>
+                                    <mat-option value="BR">Pacífico</mat-option>
+                                    <mat-option value="BR">Rimac</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div>
+
+                            <mat-form-field appearance="outline" class="small-padding block">
+                                <mat-label>Ramo</mat-label>
+                                <mat-select [(value)]="aseguradoraSeleccionada">
+                                    <mat-option value="all">Todos</mat-option>
+                                    <mat-option value="PE">Vida</mat-option>
+                                    <mat-option value="AR">Autos</mat-option>
+                                    <mat-option value="BR">SCTR</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div>
+
+                            <mat-form-field appearance="outline" class="small-padding block">
+                                <mat-label>Referenciador</mat-label>
+                                <mat-select [(value)]="aseguradoraSeleccionada">
+                                    <mat-option value="all">Todos</mat-option>
+                                    <mat-option value="PE">Juan Perez</mat-option>
+                                    <mat-option value="AR">Diego Alonso Alvarado Alatrista</mat-option>
+                                    <mat-option value="BR">Juan Carlos Hernandez Alvarado</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div>
+                            <mat-form-field appearance="outline" class="small-padding block">
+                                <mat-label>Fecha Inicio</mat-label>
+                                <input (click)="formDatepickerRef.open()" (focus)="formDatepickerRef.open()"
+                                    [matDatepicker]="formDatepickerRef" matInput readonly>
+                                <mat-datepicker-toggle [for]="formDatepickerRef" matSuffix></mat-datepicker-toggle>
+                                <mat-datepicker #formDatepickerRef></mat-datepicker>
+                            </mat-form-field>
+                        </div>
+                        <div>
+                            <mat-form-field appearance="outline" class="small-padding block">
+                                <mat-label>Fecha Fin</mat-label>
+                                <input (click)="formDatepickerRef2.open()" (focus)="formDatepickerRef2.open()"
+                                    [matDatepicker]="formDatepickerRef2" matInput readonly>
+                                <mat-datepicker-toggle [for]="formDatepickerRef2" matSuffix></mat-datepicker-toggle>
+                                <mat-datepicker #formDatepickerRef2></mat-datepicker>
+                            </mat-form-field>
+                        </div>
+                        <div>
+                            <button class="w-full" color="primary" mat-raised-button type="button">
+                                <ic-icon [icon]="icFilterList" class="ltr:mr-3 rtl:ml-3" inline="true" size="18px"></ic-icon>
+                                <span>FILTRAR</span>
+                              </button>
+                        </div>
+                        
+                    </div>
+                    <div class="tabla">
+                        <vex-custom-table (rowClick)="rowClick($event)" [columns]="tableColumns" [data]="tableData"
+                            [searchStr]="searchStr$ | async">
+                        </vex-custom-table>
+                    </div>
+                </div> -->
+
+            </div>
+
+        </div>
+
+    </vex-page-layout-content>
+</vex-page-layout>
+
+
+<!-- 
+<div class="p-8">
+    <div fxLayout="row" fxLayoutGap="16px" fxLayoutAlign="space-between center">
+
+        <div class="bg-card rounded-full border px-4 w-30" fxFlex="30" fxLayoutAlign="start center">
+            <ic-icon [icIcon]="icSearch" size="20px"></ic-icon>
+            <input [formControl]="searchCtrl" class="px-4 py-3 border-0 outline-none w-full bg-transparent"
+                placeholder="Buscar cierre..." type="search">
+        </div>
+        <div>
+            <button color="primary" mat-raised-button type="button" (click)="openComision()">Crear Cierre</button>
+        </div>
+
+    </div>
+
+    <div fxLayout="column" fxLayoutGap="16px">
+
+        
+        <vex-custom-table (rowClick)="rowClick($event)" [columns]="tableColumns" [data]="tableData"
+            [searchStr]="searchStr$ | async">
+        </vex-custom-table>
+    </div>
+</div> -->

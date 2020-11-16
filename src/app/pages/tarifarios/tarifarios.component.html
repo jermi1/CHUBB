@@ -1,0 +1,153 @@
+<vex-page-layout mode="card">
+  <vex-page-layout-header fxLayout="row" fxLayoutAlign="space-between center">
+    <div>
+        <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="25px">
+          <div>
+            <h2 class="headline text-primary-contrast-500 m-0 flex items-center w-full max-w-xxxs mr-6">
+              <ic-icon @scaleIn [icon]="icSettings" class="hidden sm:block"></ic-icon>
+              <span @fadeInRight class="ml-4 block">Tarifario</span>
+            </h2>
+          </div>
+        </div>
+      </div>
+      <!-- <div fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="15px">
+  
+        <button color="primary-50" mat-raised-button type="button" (click)="openComision()">Nuevo Cierre</button>
+  
+      </div> -->
+  
+      <div>
+          <div class="flex items-center">
+              
+            <div
+                class="hidden sm:flex items-center bg-card rounded-full overflow-hidden relative ltr:pl-5 rtl:pr-5 h-12 max-w-md w-full shadow-8 mx-auto">
+                <ic-icon [icon]="icSearch" class="text-secondary flex-none" size="24px"></ic-icon>
+                <input [formControl]="searchCtrl"
+                    class="border-0 h-12 outline-none ltr:pl-4 rtl:pr-4 placeholder:text-secondary bg-card flex-auto"
+                    placeholder="Buscar Tarifario..." type="text" />
+            </div>
+              <div>
+                  <button mat-icon-button matTooltip="Filtros de búsqueda" type="button" class="ml-8 text-primary-contrast-500" (click)="openTableFilter()">
+                      <mat-icon [icIcon]="icFilterList"></mat-icon>
+                  </button>
+              </div>
+              <div>
+                  <button mat-icon-button matTooltip="Descargar en formato Excell" type="button" class="ml-4 text-primary-contrast-500">
+                      <mat-icon [icIcon]="icCloudDownload"></mat-icon>
+                  </button>
+  
+              </div>
+              <div>
+                  <button mat-icon-button matTooltip="Agregar Tarifario" type="button" class="ml-4 text-primary-contrast-500" [routerLink]="['/tarifarios/editar']">
+                      <mat-icon [icIcon]="icAddCircle"></mat-icon>
+                  </button>
+  
+              </div>
+
+              <!-- <div>
+                <button [routerLink]="['/tarifarios/tarifarios-edit']" color="primary-50" mat-raised-button type="button">Cargar
+                    Tarifario</button>
+              </div> -->
+              
+          </div>
+      </div>
+
+    <!-- <div>
+      <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="25px">
+        <div>
+          <h2 class="title m-0">Tarifario</h2>
+        </div>
+      </div>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="15px">
+      <a>
+        <span>Opciones: Activar / desactivar </span>
+      </a>
+      <button [routerLink]="['/tarifarios/tarifarios-edit']" color="primary-50" mat-raised-button type="button">Cargar
+        Tarifario</button>
+
+      <div class="hidden  rounded-full overflow-hidden  ltr:pl-5 rtl:pr-5 h-12 max-w-md shadow-8 mx-auto">
+        <input class="border-0 h-12 outline-none ltr:pl-4 rtl:pr-4 placeholder:text-secondary bg-card flex-auto"
+          placeholder="Buscar Clientes..." type="text" />
+      </div>
+
+    </div> -->
+
+  </vex-page-layout-header>
+
+  <vex-page-layout-content>
+
+    <div class="card h-full overflow-hidden flex-auto">
+    <vex-custom-table (rowClick)="rowClick($event)" [columns]="tableColumns" [data]="tableData"
+                        [searchStr]="searchStr$ | async">
+                    </vex-custom-table>
+
+                </div>
+    <!-- <div class="card">
+      <div class="mat2-table">
+        <div class="mat2-header-row">
+          <div class="mat2-header-cell">Nº</div>
+          <div class="mat2-header-cell">Aseguradora</div>
+          <div class="mat2-header-cell">Ramo</div>
+          <div class="mat2-header-cell">Producto</div>
+          <div class="mat2-header-cell">Tipo</div>
+          <div class="mat2-header-cell">Cliente</div>
+          <div class="mat2-header-cell">Vigencia de Inicio</div>
+          <div class="mat2-header-cell">Vigencia de Fin</div>
+          <div class="mat2-header-cell">Estado</div>
+          <div class="mat2-header-cell">Acciones</div>
+        </div>
+
+        <div class="mat2-row">
+          <div class="mat2-cell">1</div>
+          <div class="mat2-cell">La Positiva</div>
+          <div class="mat2-cell">Vida</div>
+          <div class="mat2-cell">Vida Familiar</div>
+          <div class="mat2-cell">General</div>
+          <div class="mat2-cell">Marcelo Tataje</div>
+          <div class="mat2-cell">1/11/2020</div>
+          <div class="mat2-cell">12/11/2020</div>
+          <div class="mat2-cell">
+            <div>
+              <div class="rounded px-2 py-1 font-medium text-xs text-green-600 bg-green-100" fxFlex="none">
+                Activo
+              </div>
+            </div>
+          </div>
+          <div class="mat2-cell">
+            <div>
+              <div>
+                <button mat-button color="warn" [routerLink]="['/tarifarios/tarifarios-edit']">Ver</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mat2-row">
+          <div class="mat2-cell">2</div>
+          <div class="mat2-cell">Rimac</div>
+          <div class="mat2-cell">Vida</div>
+          <div class="mat2-cell">Vida Familiar</div>
+          <div class="mat2-cell">General</div>
+          <div class="mat2-cell">Kevin Miknic</div>
+          <div class="mat2-cell">1/11/2020</div>
+          <div class="mat2-cell">12/11/2020</div>
+          <div class="mat2-cell">
+            <div>
+              <div class="rounded px-2 py-1 font-medium text-xs text-green-600 bg-green-100" fxFlex="none">
+                Activo
+              </div>
+            </div>
+          </div>
+          <div class="mat2-cell">
+            <div>
+              <div>
+                <button mat-button color="warn" [routerLink]="['/tarifarios/tarifarios-edit']">Ver</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+  </vex-page-layout-content>
+
+</vex-page-layout>

@@ -1,0 +1,46 @@
+{
+    "poliza":[{
+        "aseguradora": "Rimac",
+        "numeroPoliza": "032135456456",
+        "numeroCertificado": "1212444",
+        "montoAsegurado": 1321,
+        "prima": 120,
+        "datosDePoliza":[{
+            "inicioVigencia": "12/12/2019",
+            "finVigencia": "12/12/2020",
+            "numeroDeComprobante": "C002-0000012"
+        }],
+        "ramo": "autos",
+        "cliente": [{
+                "dni": "45055471 ",
+                "nombres": "Diego Alonso",
+                "apellidoPaterno": "Alvarado",
+                "ApellidoMaterno": "Alatrista",
+                "clienteAsociado": "Materia Gris"
+            }],
+        "vehiculo": [{
+            "certificado": "123345",
+                "marca": [{
+                "id": 12,
+                "marca": "toyota"
+                }],
+            "version": [{
+                    "id": 12,
+                    "marca": "toyota"
+                    }],
+            "placa": "AKE123",
+            "clase": [{
+                "id": 12,
+                "clase": "Station Wagon"
+                }],
+            "uso": [{
+                "id": 123,
+                "uso": "personal"
+                }],
+            "asientos": 5,
+            "numeroSerie": "478389292",
+            "year": "2010"
+            }]
+    }]
+}
+      

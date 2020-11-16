@@ -1,0 +1,227 @@
+<!-- <div class="w-full h-full flex flex-col">
+  <div class="px-gutter pt-6 pb-20 bg-primary-500 flex-none">
+    <div class="flex items-center" vexContainer>
+      <button (click)="openMenu()" @scaleIn class="sm:hidden text-primary-contrast-500" mat-icon-button type="button">
+        <mat-icon [icIcon]="icMenu"></mat-icon>
+      </button>
+      <h2 class="headline text-primary-contrast-500 m-0 flex items-center w-full max-w-xxxs mr-6">
+        <ic-icon @scaleIn [icon]="icRepeat" class="hidden sm:block"></ic-icon>
+        <span @fadeInRight class="ml-4 block">Renovaciones</span>
+      </h2>
+
+      <div
+        class="hidden sm:flex items-center bg-card rounded-full overflow-hidden relative ltr:pl-5 rtl:pr-5 h-12 max-w-md w-full shadow-8 mx-auto">
+        <ic-icon [icon]="icSearch" class="text-secondary flex-none" size="24px"></ic-icon>
+        <input [formControl]="searchCtrl"
+          class="border-0 h-12 outline-none ltr:pl-4 rtl:pr-4 placeholder:text-secondary bg-card flex-auto"
+          placeholder="Buscar Póliza..." type="text" />
+      </div>
+    </div>
+  </div>
+
+  <div class="-mt-14 pt-0 overflow-hidden flex" vexContainer>
+
+    <mat-drawer-container class="bg-transparent flex-auto flex">
+      <mat-drawer [(opened)]="menuOpen" mode="over">
+        <vex-renovaciones-table-menu (filterChange)="setData($event)" (openAddNew)="openRenovacion()" class="sm:hidden">
+        </vex-renovaciones-table-menu>
+      </mat-drawer>
+      <mat-drawer-content class="p-gutter pt-0 flex-auto flex items-start">
+        <vex-renovaciones-table-menu (filterChange)="setData($event)" (openAddNew)="openRenovacion()"
+          class="hidden sm:block mr-6"></vex-renovaciones-table-menu>
+
+        <div class="card h-full overflow-hidden flex-auto">
+          <vex-renovaciones-data-table (openRenovacion)="openRenovacion($event)" (toggleStar)="toggleStar($event)"
+            [columns]="tableColumns" [data]="tableData" [searchStr]="searchStr$ | async"></vex-renovaciones-data-table>
+        </div>
+      </mat-drawer-content>
+
+    </mat-drawer-container>
+  </div>
+</div> -->
+
+
+<vex-page-layout mode="card">
+    <vex-page-layout-header fxLayout="row" fxLayoutAlign="space-between center">
+      <!-- <div>
+        <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="25px">
+  
+          <button [routerLink]="['/renovaciones']" mat-icon-button type="button">
+            <mat-icon [icIcon]="icArrowBackIos"></mat-icon>
+          </button>
+  
+          <div>
+            <h2 class="title m-0">400388544442 - Autos</h2>
+            <div>Diego Alonso Alvarado Alatrista - DNI 45055471 - Materia Gris</div>
+          </div>
+        </div>
+  
+      </div>
+      <div fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="15px">
+  
+        <button color="primary-50" mat-raised-button type="button">Renovar</button>
+  
+        
+      </div> -->
+
+    <!-- <div class="w-full h-full flex flex-col">
+        <div class="px-gutter pt-6 pb-20 bg-primary-500 flex-none">
+          <div class="flex items-center" vexContainer>
+            <button (click)="openMenu()" @scaleIn class="sm:hidden text-primary-contrast-500" mat-icon-button type="button">
+              <mat-icon [icIcon]="icMenu"></mat-icon>
+            </button>
+            <h2 class="headline text-primary-contrast-500 m-0 flex items-center w-full max-w-xxxs mr-6">
+              <ic-icon @scaleIn [icon]="icRepeat" class="hidden sm:block"></ic-icon>
+              <span @fadeInRight class="ml-4 block">Renovaciones</span>
+            </h2>
+      
+            <div
+              class="hidden sm:flex items-center bg-card rounded-full overflow-hidden relative ltr:pl-5 rtl:pr-5 h-12 max-w-md w-full shadow-8 mx-auto">
+              <ic-icon [icon]="icSearch" class="text-secondary flex-none" size="24px"></ic-icon>
+              <input [formControl]="searchCtrl"
+                class="border-0 h-12 outline-none ltr:pl-4 rtl:pr-4 placeholder:text-secondary bg-card flex-auto"
+                placeholder="Buscar Póliza..." type="text" />
+            </div>
+          </div>
+        </div>
+    </div> -->
+
+    <!-- <div class="flex items-center" vexContainer>
+        
+        <button (click)="openMenu()" @scaleIn class="sm:hidden text-primary-contrast-500" mat-icon-button type="button">
+          <mat-icon [icIcon]="icMenu"></mat-icon>
+        </button>
+
+        <h2 class="headline text-primary-contrast-500 m-0 flex items-center w-full max-w-xxxs mr-6">
+          <ic-icon @scaleIn [icon]="icRepeat" class="hidden sm:block"></ic-icon>
+          <span @fadeInRight class="ml-4 block">Renovaciones</span>
+        </h2>
+  
+        <div
+          class="hidden sm:flex items-center bg-card rounded-full overflow-hidden relative ltr:pl-5 rtl:pr-5 h-12 max-w-md w-full shadow-8 mx-auto">
+          <ic-icon [icon]="icSearch" class="text-secondary flex-none" size="24px"></ic-icon>
+          <input [formControl]="searchCtrl"
+            class="border-0 h-12 outline-none ltr:pl-4 rtl:pr-4 placeholder:text-secondary bg-card flex-auto"
+            placeholder="Buscar Póliza..." type="text" />
+        </div>
+      </div> -->
+
+
+
+      <!-- <div class="flex items-center justify-between" vexContainer> -->
+        <button (click)="openMenu()" @scaleIn class="sm:hidden text-primary-contrast-500" mat-icon-button
+            type="button">
+            <mat-icon [icIcon]="icMenu"></mat-icon>
+        </button>
+        <h2 class="headline text-primary-contrast-500 m-0 flex items-center w-full max-w-xxxs mr-6">
+            <ic-icon @scaleIn [icon]="icRepeat" class="hidden sm:block"></ic-icon>
+            <span @fadeInRight class="ml-4 block">Renovaciones</span>
+        </h2>
+
+        <div class="flex items-center">
+            <div
+                class="hidden sm:flex items-center bg-card rounded-full overflow-hidden relative ltr:pl-5 rtl:pr-5 h-12 max-w-md w-full shadow-8 mx-auto">
+                <ic-icon [icon]="icSearch" class="text-secondary flex-none" size="24px"></ic-icon>
+                <input [formControl]="searchCtrl"
+                    class="border-0 h-12 outline-none ltr:pl-4 rtl:pr-4 placeholder:text-secondary bg-card flex-auto"
+                    placeholder="Buscar Póliza..." type="text" />
+            </div>
+            <div>
+                <button mat-icon-button matTooltip="Filtros de búsqueda" type="button" class="ml-8 text-primary-contrast-500" (click)="openTableFilter()">
+                    <mat-icon [icIcon]="icFilterList"></mat-icon>
+                </button>
+            </div>
+            <div>
+                <button mat-icon-button matTooltip="Descargar en formato Excell" type="button" class="ml-4 text-primary-contrast-500">
+                    <mat-icon [icIcon]="icCloudDownload"></mat-icon>
+                </button>
+
+            </div>
+        </div>
+    <!-- </div> -->
+        
+    </vex-page-layout-header>
+  
+  
+  
+    <vex-page-layout-content vexContainer>
+      <div class="card h-full overflow-hidden flex-auto">
+
+        <div class="p-6">
+        <div id="tabla-con-filtro">
+            <div class="filtro">
+                <div>
+                    <mat-form-field appearance="outline" class="small-padding block">
+                        <mat-label>Aseguradora</mat-label>
+                        <mat-select [(value)]="aseguradoraSeleccionada">
+                            <mat-option value="all">Todas</mat-option>
+                            <mat-option value="PE">La Positiva</mat-option>
+                            <mat-option value="AR">Mapfre</mat-option>
+                            <mat-option value="BR">Pacífico</mat-option>
+                            <mat-option value="BR">Rimac</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div>
+
+                    <mat-form-field appearance="outline" class="small-padding block">
+                        <mat-label>Ramo</mat-label>
+                        <mat-select [(value)]="aseguradoraSeleccionada">
+                            <mat-option value="all">Todos</mat-option>
+                            <mat-option value="PE">Vida</mat-option>
+                            <mat-option value="AR">Autos</mat-option>
+                            <mat-option value="BR">SCTR</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div>
+
+                    <mat-form-field appearance="outline" class="small-padding block">
+                        <mat-label>Referenciador</mat-label>
+                        <mat-select [(value)]="aseguradoraSeleccionada">
+                            <mat-option value="all">Todos</mat-option>
+                            <mat-option value="PE">Juan Perez</mat-option>
+                            <mat-option value="AR">Diego Alonso Alvarado Alatrista</mat-option>
+                            <mat-option value="BR">Juan Carlos Hernandez Alvarado</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field appearance="outline" class="small-padding block">
+                        <mat-label>Fecha Inicio</mat-label>
+                        <input (click)="formDatepickerRef.open()" (focus)="formDatepickerRef.open()"
+                            [matDatepicker]="formDatepickerRef" matInput readonly>
+                        <mat-datepicker-toggle [for]="formDatepickerRef" matSuffix></mat-datepicker-toggle>
+                        <mat-datepicker #formDatepickerRef></mat-datepicker>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field appearance="outline" class="small-padding block">
+                        <mat-label>Fecha Fin</mat-label>
+                        <input (click)="formDatepickerRef2.open()" (focus)="formDatepickerRef2.open()"
+                            [matDatepicker]="formDatepickerRef2" matInput readonly>
+                        <mat-datepicker-toggle [for]="formDatepickerRef2" matSuffix></mat-datepicker-toggle>
+                        <mat-datepicker #formDatepickerRef2></mat-datepicker>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <button class="w-full" color="primary" mat-raised-button type="button">
+                        <ic-icon [icon]="icFilterList" class="ltr:mr-3 rtl:ml-3" inline="true" size="18px"></ic-icon>
+                        <span>FILTRAR</span>
+                      </button>
+                </div>
+                
+            </div>
+            <div class="tabla">
+                <vex-renovaciones-data-table (openRenovacion)="openRenovacion($event)" (toggleStar)="toggleStar($event)"
+                [columns]="tableColumns" [data]="tableData" [searchStr]="searchStr$ | async"></vex-renovaciones-data-table>
+            </div>
+        </div>
+        </div>
+
+
+        
+
+      </div>
+    </vex-page-layout-content>
+  </vex-page-layout>

@@ -1,0 +1,17 @@
+{
+    "siniestros":[{
+        "cliente": "CLI05213654",
+        "estado": [{
+            "activo":true,
+            "cerrado": false
+        }],
+        "poliza": "PO324354",
+        "causa":[{
+            "id": 12,
+            "causa": "Accidente Automovilístico"
+        }],
+        "fechaDeOcurrencia": "12/11/2019",
+        "fechaDeDenuncia": "13/11/2019",
+        "observaciones": "En Av. Benavides"
+    }]
+}

@@ -1,0 +1,21 @@
+<div class="p-8">
+    <div fxLayout="row" fxLayoutGap="16px" fxLayoutAlign="space-between center">
+
+        <div class="bg-card rounded-full border px-4 w-30" fxFlex="30" fxLayoutAlign="start center">
+            <ic-icon [icIcon]="icSearch" size="20px"></ic-icon>
+            <input [formControl]="searchCtrl" class="px-4 py-3 border-0 outline-none w-full bg-transparent"
+                placeholder="Buscar cotización..." type="search">
+        </div>
+        <div>
+            <button color="primary" mat-raised-button type="button">Nueva Cotización</button>
+        </div>
+    </div>
+
+    <div fxLayout="column" fxLayoutGap="16px">
+
+        <vex-custom-table (rowClick)="rowClick($event)" [columns]="tableColumns" [data]="tableData"
+            [searchStr]="searchStr$ | async">
+        </vex-custom-table>
+
+    </div>
+</div>

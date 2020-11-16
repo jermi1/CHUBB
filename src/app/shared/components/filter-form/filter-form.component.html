@@ -1,0 +1,83 @@
+<h5 class="text-primary-500 pb-2">
+
+    <div class="flex justify-start items-center">
+        <span [matMenuTriggerFor]="typeMenu" class="cursor-pointer">
+            Buscar por Aseguradora
+        </span>
+        <ic-icon [icon]="icArrowDropDown" size="20px" [matMenuTriggerFor]="typeMenu" class="cursor-pointer"></ic-icon>
+    </div>
+
+</h5>
+
+<mat-menu #typeMenu="matMenu" xPosition="before" yPosition="below">
+    <button mat-menu-item>
+        <span>Búscar por Cliente</span>
+    </button>
+    <button mat-menu-item>
+        <span>Búscar por Póliza</span>
+    </button>
+    <button mat-menu-item>
+        <span>Búscar por Cupón</span>
+    </button>
+</mat-menu>
+
+<div class="pb-0" fxLayout.lt-sm="column" fxLayoutGap="16px" fxLayoutGap.lt-sm="0">
+
+    <mat-form-field appearance="outline" class="small-padding block vex-flex-form-field" fxFlex="auto">
+        <mat-label>Aseguradora</mat-label>
+        <mat-select [(value)]="aseguradoraSeleccionada">
+            <mat-option value="all">Todas</mat-option>
+            <mat-option value="PE">La Positiva</mat-option>
+            <mat-option value="AR">Mapfre</mat-option>
+            <mat-option value="BR">Pacífico</mat-option>
+            <mat-option value="BR">Rimac</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="small-padding block vex-flex-form-field" fxFlex="auto">
+        <mat-label>Ramo</mat-label>
+        <mat-select [(value)]="aseguradoraSeleccionada">
+            <mat-option value="all">Todos</mat-option>
+            <mat-option value="PE">Vida</mat-option>
+            <mat-option value="AR">Autos</mat-option>
+            <mat-option value="BR">SCTR</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="small-padding block vex-flex-form-field" fxFlex="auto">
+        <mat-label>Referenciador</mat-label>
+        <mat-select [(value)]="aseguradoraSeleccionada">
+            <mat-option value="all">Todos</mat-option>
+            <mat-option value="PE">Juan Perez</mat-option>
+            <mat-option value="AR">Diego Alonso Alvarado Alatrista</mat-option>
+            <mat-option value="BR">Juan Carlos Hernandez Alvarado</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="small-padding block vex-flex-form-field" fxFlex="auto">
+        <mat-label>Fecha Inicio</mat-label>
+        <input (click)="formDatepickerRef.open()" (focus)="formDatepickerRef.open()" [matDatepicker]="formDatepickerRef"
+            matInput readonly>
+        <mat-datepicker-toggle [for]="formDatepickerRef" matSuffix></mat-datepicker-toggle>
+        <mat-datepicker #formDatepickerRef></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="small-padding block vex-flex-form-field" fxFlex="auto">
+        <mat-label>Fecha Fin</mat-label>
+        <input (click)="formDatepickerRef2.open()" (focus)="formDatepickerRef2.open()"
+            [matDatepicker]="formDatepickerRef2" matInput readonly>
+        <mat-datepicker-toggle [for]="formDatepickerRef2" matSuffix></mat-datepicker-toggle>
+        <mat-datepicker #formDatepickerRef2></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="small-padding block vex-flex-form-field" fxFlex="auto">
+        <mat-label>Estado</mat-label>
+        <mat-select [(value)]="aseguradoraSeleccionada">
+            <mat-option value="todos">Todos</mat-option>
+            <mat-option value="pagados">Pagados</mat-option>
+            <mat-option value="pendientes">Pendientes</mat-option>
+            <mat-option value="anulados">Anulados</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+</div>

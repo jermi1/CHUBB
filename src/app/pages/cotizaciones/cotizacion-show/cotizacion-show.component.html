@@ -1,0 +1,79 @@
+<vex-page-layout mode="card">
+
+    <vex-page-layout-header fxLayout="row" fxLayoutAlign="space-between center">
+
+        <div>
+            <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="25px">
+
+                <button @scaleIn [routerLink]="['/cotizaciones']" mat-icon-button type="button">
+                    <mat-icon [icIcon]="icArrowBackIos"></mat-icon>
+                </button>
+
+                <div @fadeInRight>
+                    <h2 class="title m-0">Cotización: {{ cotizacion.codigo }} | {{ cotizacion.ramo }} |
+                        {{ getStateBadged() }}</h2>
+                    <div>{{ cotizacion.name }}</div>
+                </div>
+            </div>
+
+        </div>
+        <div fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="15px">
+
+            <button mat-stroked-button type="button" [routerLink]="['/cotizaciones']">
+                <span>Cancelar</span>
+            </button>
+
+            <button color="primary-50" mat-raised-button type="button" [routerLink]="['/cotizaciones/editar']"
+                *ngIf="getStateBadged() == 'Borrador'">
+                <span>Guardar Cambios</span>
+            </button>
+
+            <button color="primary-50" mat-raised-button type="button" [routerLink]="['/cotizaciones/editar']"
+                *ngIf="getStateBadged() == 'Borrador'">
+                <span>Procesar</span>
+            </button>
+
+            <button color="primary-50" mat-raised-button type="button" [routerLink]="['/cotizaciones/editar']"
+                *ngIf="getStateBadged() == 'En Aseguradora'">
+                <span>Enviar al Cliente</span>
+            </button>
+
+            <button (click)="$event.stopPropagation()" [matMenuTriggerFor]="clienteMenu" mat-icon-button type="button">
+                <mat-icon [icIcon]="icMoreVert"></mat-icon>
+            </button>
+
+        </div>
+    </vex-page-layout-header>
+
+    <vex-page-layout-content vexContainer>
+
+        <div class="card">
+
+            <nav mat-tab-nav-bar class="mat-tab-group">
+                <a mat-tab-link *ngFor="let link of navLinks" [routerLink]="link.path" routerLinkActive
+                    class="mat-tab-label" #rla="routerLinkActive" [active]="rla.isActive">
+                    {{link.label}}
+                </a>
+            </nav>
+
+            <router-outlet></router-outlet>
+
+        </div>
+
+    </vex-page-layout-content>
+
+</vex-page-layout>
+
+<mat-menu #clienteMenu="matMenu" xPosition="before" yPosition="below">
+
+    <button mat-menu-item [routerLink]="['/cotizaciones']">
+        <mat-icon [icIcon]="icClose"></mat-icon>
+        <span>Cotización Rechazada</span>
+    </button>
+
+    <button mat-menu-item [routerLink]="['/cotizaciones']">
+        <mat-icon [icIcon]="icDeleteForever"></mat-icon>
+        <span>Eliminar Cotización</span>
+    </button>
+
+</mat-menu>

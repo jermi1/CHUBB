@@ -1,0 +1,24 @@
+::ng-deep .mat-form-field.no-padding {
+    .mat-form-field-wrapper {
+        padding-bottom: 0 !important;
+    }
+ }
+
+ ::ng-deep .mat-form-field.small-padding {
+    .mat-form-field-wrapper {
+        padding-bottom: 0.5rem !important;
+    }
+ }
+
+
+ ::ng-deep #tabla-con-filtro {
+     display: flex;
+     .filtro {
+         display: block;
+         max-width: 180px;
+         margin-right: 1.5rem;
+     }
+     .tabla {
+         flex: 1
+     }
+ }

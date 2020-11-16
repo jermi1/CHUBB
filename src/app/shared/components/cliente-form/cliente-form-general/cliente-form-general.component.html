@@ -1,0 +1,240 @@
+<div class="p-9">
+
+    <div class="pb-8" fxLayout="row" fxLayoutGap="16px" fxLayoutAlign="space-between center">
+        <mat-radio-group color="accent" fxLayout="row" fxLayoutGap="16px" (change)="cambioTipoPersona($event)">
+            <mat-radio-button [checked]="personaNatural" color="primary" value="1">Persona Natural</mat-radio-button>
+            <mat-radio-button [checked]="!personaNatural" color="primary" value="2">Persona Jurídica</mat-radio-button>
+        </mat-radio-group>
+        <div fxLayout="row" fxLayoutGap="16px">
+            <mat-checkbox [checked]="true" color="primary">Cliente VIP</mat-checkbox>
+        </div>
+    </div>
+
+    <div class="pb-0" fxLayout.lt-sm="column" fxLayoutGap="16px" fxLayoutGap.lt-sm="0" *ngIf="personaNatural">
+        <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+            <mat-label>Nombres</mat-label>
+            <input matInput [value]="cliente.nombre">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+            <mat-label>Apellido Paterno</mat-label>
+            <input matInput [value]="cliente.apellidoPaterno">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+            <mat-label>Apellido Materno</mat-label>
+            <input matInput [value]="cliente.apellidoMaterno">
+        </mat-form-field>
+    </div>
+
+    <div class="pb-0" fxLayout.lt-sm="column" fxLayoutGap="16px" fxLayoutGap.lt-sm="0">
+
+        <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="50" *ngIf="!personaNatural">
+            <mat-label>Razón Social</mat-label>
+            <input matInput [value]="cliente.nombre">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto" *ngIf="!personaNatural">
+            <mat-label>RUC</mat-label>
+            <input matInput>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto" *ngIf="personaNatural">
+            <mat-label>Nacionalidad</mat-label>
+            <mat-select [(value)]="cliente.nacionalidad">
+                <mat-option value="PE">Perú</mat-option>
+                <mat-option value="AR">Argentina</mat-option>
+                <mat-option value="BR">Brazil</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto" *ngIf="personaNatural">
+            <mat-label>Fecha de Nacimento</mat-label>
+            <input (click)="formDatepickerRef.open()" (focus)="formDatepickerRef.open()"
+                [matDatepicker]="formDatepickerRef" matInput [formControl]="fechaNacimiento" readonly>
+            <mat-datepicker-toggle [for]="formDatepickerRef" matSuffix></mat-datepicker-toggle>
+            <mat-datepicker #formDatepickerRef></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto" *ngIf="personaNatural">
+            <mat-label>Genero</mat-label>
+            <mat-select [(value)]="cliente.genero">
+                <mat-option value="M">Masculino</mat-option>
+                <mat-option value="F">Femenino</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+            <mat-label>Fecha de Ingreso</mat-label>
+            <input (click)="formDatepickerRef.open()" (focus)="formDatepickerRef.open()"
+                [matDatepicker]="formDatepickerRef" matInput [formControl]="fechaIngreso" readonly>
+            <mat-datepicker-toggle [for]="formDatepickerRef" matSuffix></mat-datepicker-toggle>
+            <mat-datepicker #formDatepickerRef></mat-datepicker>
+        </mat-form-field>
+
+    </div>
+
+    <div class="pb-5" fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="16px" *ngIf="personaNatural">
+
+        <div fxFlex="42" fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="16px">
+            <div>
+                <h4 class="text-primary-500">Documentos</h4>
+            </div>
+            <div>
+                <button mat-button color="primary">Agregar documento</button>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="pb-0" fxLayout.lt-sm="column" fxLayoutGap="16px" fxLayoutGap.lt-sm="0" *ngIf="personaNatural">
+
+        <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="15">
+            <mat-label>Tipo</mat-label>
+            <mat-select>
+                <mat-option value="1">DNI</mat-option>
+                <mat-option value="2">C.E.</mat-option>
+                <mat-option value="3">Pasaporte</mat-option>
+                <mat-option value="3">RUC</mat-option>
+                <mat-option value="3">PTP</mat-option>
+                <mat-option value="4">Otros</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="25">
+            <mat-label>Nº Documento</mat-label>
+            <input matInput>
+        </mat-form-field>
+
+    </div>
+
+    <h4 class="pb-3 text-primary-500">Información de ley</h4>
+
+    <div class="pb-0" fxLayout.lt-sm="column" fxLayoutGap="16px" fxLayoutGap.lt-sm="0">
+<!--
+        <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+            <mat-label>LAFT</mat-label>
+            <mat-select>
+                <mat-option>Bajo</mat-option>
+                <mat-option>Medio</mat-option>
+                <mat-option>Alto</mat-option>
+            </mat-select>
+        </mat-form-field>
+-->
+        <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+            <mat-label>Riesgo Financiero</mat-label>
+            <mat-select>
+                <mat-option>Bajo</mat-option>
+                <mat-option>Medio</mat-option>
+                <mat-option>Alto</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto" *ngIf="personaNatural">
+            <mat-label>Ocupación</mat-label>
+            <input matInput>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto" *ngIf="personaNatural">
+            <mat-label>Centro de Labores</mat-label>
+            <input matInput>
+        </mat-form-field>
+<!--
+        <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto" *ngIf="!personaNatural">
+            <mat-label>CIIU (Actividad Económica)</mat-label>
+            <input matInput>
+        </mat-form-field>
+
+    </div>
+    <div class="pb-5" fxLayout="row" fxLayoutGap="16px" fxLayoutAlign="start top" *ngIf="personaNatural">
+        <div class="pt-4">
+            <mat-checkbox [checked]="false" color="primary">Persona expuesta politicamente (PEP)</mat-checkbox>
+        </div>
+        
+        <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="30" *ngIf="personaNatural">
+            <mat-label>Institución u Organismo Público al que pertenece</mat-label>
+            <input matInput>
+        </mat-form-field>
+        
+    </div>
+-->
+
+<div class="pb-5" fxLayout="column" *ngIf="!personaNatural">
+    <div fxLayout="column">
+        <mat-checkbox [checked]="false">Empresa del Estado</mat-checkbox>
+    </div>
+</div>
+</div>
+
+    <div *ngIf="!personaNatural">
+        <div class="pb-5" fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="16px">
+
+            <div>
+                <h4 class="text-primary-500">Contacto</h4>
+            </div>
+            <!--
+            <div>
+                <button mat-button color="primary">Agregar Contacto</button>
+            </div>
+            -->
+        </div>
+
+        <div class="pb-0" fxLayout.lt-sm="column" fxLayoutGap="16px" fxLayoutGap.lt-sm="0">
+            <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="15">
+                <mat-label>Tipo</mat-label>
+                <mat-select>
+                    <mat-option value="1">DNI</mat-option>
+                    <mat-option value="2">C.E.</mat-option>
+                    <mat-option value="3">Pasaporte</mat-option>
+                    <mat-option value="4">Otros</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="25">
+                <mat-label>Número de Documento</mat-label>
+                <input matInput>
+            </mat-form-field>
+        </div>
+
+        <div class="pb-0" fxLayout.lt-sm="column" fxLayoutGap="16px" fxLayoutGap.lt-sm="0">
+
+            <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+                <mat-label>Nombre</mat-label>
+                <input matInput>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+                <mat-label>Apellido Paterno</mat-label>
+                <input matInput>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+                <mat-label>Apellido Materno</mat-label>
+                <input matInput>
+            </mat-form-field>
+
+        </div>
+
+        <div class="pb-0" fxLayout.lt-sm="column" fxLayoutGap="16px" fxLayoutGap.lt-sm="0">
+
+            <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="25">
+                <mat-label>Correo Electrónico</mat-label>
+                <input matInput>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="25">
+                <mat-label>Teléfono</mat-label>
+                <input matInput>
+            </mat-form-field>
+
+        </div>
+
+        <div class="pb-5" fxLayout="column">
+            
+            <div fxLayout="column">
+                <mat-checkbox [checked]="false">Representante legal</mat-checkbox>
+            </div>
+
+        </div>
+
+    </div>

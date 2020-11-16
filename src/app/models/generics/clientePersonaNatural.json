@@ -1,0 +1,77 @@
+{
+   "cliente": [{
+       "tipoCliente": [{
+           "id": 20,
+           "tipoCliente": "Persona Natural"
+       }],
+       "nombres": "Diego",
+       "apellidoPaterno": "Alvarado",
+       "apellidoMaterno": "Alatrista",
+       "fechaIngreso": "12/01/2020",
+       "nacionalidad": [{
+           "id": 12,
+           "nacionalidad": "Peruano"
+       }],
+       "fechaNacimiento": "12/11/1997",
+       "genero": [{
+           "id": 9,
+           "genero": "M"
+       }],
+       "informacionDeLey": [{
+           "laft":[{
+               "id": 11,
+               "laft": "Medio"
+           }],
+           "infocorp": [{
+               "id": 1,
+               "infocorp": "Medio"
+           }],
+           "ocupacion": "Software Developer",
+           "centroLabores": "Materia Gris",
+           "pep": [{
+               "pep": false,
+               "nombreDeInstitucion": "--"
+           }]
+       }],
+       "informacionDeContacto": [{
+           "direccion": [{
+               "tipo": [{
+                   "id": 11,
+                   "tipo": "Personal"
+               }],
+               "pais": [{
+                   "id": 11,
+                   "pais": "Perú"
+               }],
+               "departamento": [{
+                   "id": 11,
+                   "departamento": "Lima"
+               }],
+               "provincia": [{
+                   "id": 11,
+                   "provincia": "Lima"
+               }],
+               "distrito": [{
+                   "id": 11,
+                   "distrito": "Miraflores"
+               }],
+               "direccion": "Hernesto Diez Canseco-Miraflores"
+           }],
+           "infornacionDeCorreo": [{
+               "tipo":[{
+                   "id":21,
+                   "tipo": "Personal"
+               }],
+               "correo": "dalvarado@gmail.com"
+           }],
+           "informacionDeTelefono": [{
+               "tipo": [{
+                   "id": 11,
+                   "tipo": "Personal"
+               }],
+               "numero": "902574658",
+               "anexo": "---"
+           }]
+       }]
+   }]
+}
