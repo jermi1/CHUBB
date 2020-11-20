@@ -18,6 +18,7 @@ import { ContainerModule } from '../../directives/container/container.module';
 import { ClienteRoutingModule } from '../../../app/pages/clientes/cliente-routing.module';
 import { PolizasRoutingModule } from '../../../app/pages/polizas/polizas-routing.module';
 import { SiniestrosRoutingModule } from '../../../app/pages/siniestros/siniestros-routing.module';
+import { UsuarioRoutingModule } from '../../../app/pages/usuarios/usuario-routing.module';
 
 
 @NgModule({
@@ -40,7 +41,9 @@ import { SiniestrosRoutingModule } from '../../../app/pages/siniestros/siniestro
     ContainerModule,
     ClienteRoutingModule,
     PolizasRoutingModule,
-    SiniestrosRoutingModule
+    SiniestrosRoutingModule,
+    UsuarioRoutingModule
+
   ],
   exports: [ToolbarComponent]
 })

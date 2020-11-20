@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { VexRoutes } from '../@vex/interfaces/vex-route.interface';
+import { VexRoutes } from 'src/@vex/interfaces/vex-route.interface';
+// import { VexRoutes } from '../@vex//vex-route.interface';
 import { CustomLayoutComponent } from './custom-layout/custom-layout.component';
+import { UsuarioModule } from './pages/usuarios/usuario.module';
 
 const childrenRoutes: VexRoutes = [
   {
@@ -142,6 +144,18 @@ const childrenRoutes: VexRoutes = [
       {
         path: '',
         loadChildren: () => import('./pages/configuraciones/configuraciones.module').then(m => m.ConfiguracionesModule),
+        data: {
+          containerEnabled: true
+        }
+      },
+    ]
+  },
+  {
+    path: 'usuarios',
+    children: [
+      {
+        path: '',
+        loadChildren: () => import('./pages/usuarios/usuario.module').then(m => m.UsuarioModule),
         data: {
           containerEnabled: true
         }

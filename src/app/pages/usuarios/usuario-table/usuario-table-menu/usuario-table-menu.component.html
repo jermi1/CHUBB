@@ -1,0 +1,44 @@
+<div @stagger class="max-w-xxxs w-full">
+    <div class="h-14 mb-6 flex bg-primary-500 px-gutter sm:px-0" fxLayout="row" fxLayoutAlign="start center">
+      <button [routerLink]="['/usuarios/crear']" class="flex-auto" mat-raised-button type="button">
+        <ic-icon [icon]="icAddCircle" class="ltr:mr-3 rtl:ml-3" inline="true" size="18px"></ic-icon>
+        <span>NUEVO USUARIO</span>
+      </button>
+    </div>
+  
+    <div class="px-gutter sm:px-0">
+  
+      <ng-container *ngFor="let item of items">
+  
+        <a (click)="setFilter(item.id)"
+           *ngIf="item.type === 'link'"
+           @fadeInRight
+           [class.bg-hover]="isActive(item.id)"
+           [class.text-primary-500]="isActive(item.id)"
+           class="list-item mt-2 no-underline flex items-center h-10"
+           matRipple>
+          <ic-icon [icon]="item.icon" [ngClass]="item.classes?.icon" class="ltr:mr-3 rtl:ml-3" [size]="item.size ? item.size : '24px'"></ic-icon>
+          <span>{{ item.label }}</span>
+        </a>
+  
+        <h3 *ngIf="item.type === 'subheading'"
+            @fadeInRight
+            class="caption text-secondary uppercase font-medium mb-0 mt-6">{{ item.label }}
+        </h3>
+        <button (click)="openTableFilter()" *ngIf="item.type === 'button'" class="list-item mt-2 no-underline flex items-center">
+          <ic-icon [icon]="item.icon" [ngClass]="item.classes?.icon" class="ltr:mr-3 rtl:ml-3" [size]="item.size ? item.size : '24px'" ></ic-icon>
+          <span>Agregar/Anular</span>
+        </button>
+      </ng-container>
+    </div>
+    <!-- <button [routerLink]="['/polizas/editar']" (click)="openAddNew.emit()" class="flex-auto" mat-raised-button type="button"> -->
+    <!--
+    <div  class="mt-2 btncargacliente flex  px-gutter sm:px-0 divbtnSiniestro" fxLayout="row" fxLayoutAlign="start center">
+      <button [routerLink]="['/clientes/carga']" color="primary" mat-raised-button  class="flex-auto"  type="button">
+        <ic-icon [icon]="icAddCircle" class="ltr:mr-3 rtl:ml-3" inline="true" size="18px"></ic-icon>
+        <span>CARGAR CLIENTE</span>
+      </button>
+    </div>
+   -->
+  </div>
+  

@@ -4,6 +4,7 @@
            "id": 20,
            "tipoCliente": "Persona Natural"
        }],
+       "codigoAfiliado": "ASEG-20-965",
        "nombres": "Diego",
        "apellidoPaterno": "Alvarado",
        "apellidoMaterno": "Alatrista",

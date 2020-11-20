@@ -36,12 +36,12 @@
     <div class="-mt-14 pt-0 overflow-hidden flex" vexContainer>
 
         <mat-drawer-container class="bg-transparent flex-auto flex">
-            <mat-drawer [(opened)]="menuOpen" mode="over">
+            <mat-drawer [(opened)]="menuOpen" mode="over" >
                 <vex-cliente-table-menu (filterChange)="setData($event)" (openAddNew)="rowClick()" class="sm:hidden">
                 </vex-cliente-table-menu>
             </mat-drawer>
 
-            <mat-drawer-content class="p-gutter pt-0 flex-auto flex items-start">
+            <mat-drawer-content class="p-gutter pt-0 flex-auto flex items-start clienteCont">
 
                 <vex-cliente-table-menu (filterChange)="setData($event)" (openAddNew)="rowClick()"
                     class="hidden sm:block mr-6">

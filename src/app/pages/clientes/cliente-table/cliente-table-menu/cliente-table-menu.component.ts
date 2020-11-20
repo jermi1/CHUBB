@@ -60,11 +60,11 @@ export class ClienteTableMenuComponent implements OnInit {
       },
       size: '25px'
     },
+    
     {
       type: 'subheading',
       label: 'Etiquetas'
     },
-
 
     {
       type: 'link',

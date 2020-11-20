@@ -12,6 +12,10 @@ const routes: VexRoutes = [
         loadChildren: () => import('./cliente-table/cliente-table.module').then(m => m.ClienteTableModule)
       },
       {
+        path: 'carga',
+        loadChildren: () => import('./cliente-carga/cliente-carga.module').then(m => m.ClienteCargaModule)
+      },
+      {
         path: 'crear',
         loadChildren: () => import('./cliente-edit/cliente-edit.module').then(m => m.ClienteEditModule)
       },
@@ -22,8 +26,7 @@ const routes: VexRoutes = [
       {
         path: ':id/editar',
         loadChildren: () => import('./cliente-edit/cliente-edit.module').then(m => m.ClienteEditModule)
-      },
-      
+      }
     ]
   }
 ];

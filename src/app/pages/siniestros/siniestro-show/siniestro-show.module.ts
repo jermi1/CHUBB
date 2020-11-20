@@ -33,13 +33,21 @@ import { MatSelectModule } from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
 import {MatTableModule} from '@angular/material/table';
 import {MatDividerModule} from '@angular/material/divider';
+import { SiniestroShowCondicionMedicaComponent } from './siniestro-show-condicion-medica/siniestro-show-condicion-medica.component';
+import { SiniestroShowSctrComponent } from './siniestro-show-sctr/siniestro-show-sctr.component';
+import { SiniestroShowSiniestroCgComponent } from './siniestro-show-siniestro-cg/siniestro-show-siniestro-cg.component';
+import { SiniestroShowCargaComponent } from './siniestro-show-carga/siniestro-show-carga.component';
 
 // ******************************
 
 @NgModule({
   declarations: [
     SiniestroShowComponent,
-    SiniestroShowDetallesComponent
+    SiniestroShowDetallesComponent,
+    SiniestroShowCondicionMedicaComponent,
+    SiniestroShowSctrComponent,
+    SiniestroShowSiniestroCgComponent,
+    SiniestroShowCargaComponent
   ],
   imports: [
     CommonModule,

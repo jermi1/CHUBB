@@ -1,12 +1,20 @@
 <!-- Vista de tabs -->
 <mat-tab-group *ngIf="!columnView">
 
-    <mat-tab label="Infomación general">
+    <mat-tab label="Infomación de Asegurado">
         <vex-cliente-form-general [cliente]="cliente"></vex-cliente-form-general>
     </mat-tab>
 
     <mat-tab label="Información de contacto">
         <vex-cliente-form-contacto></vex-cliente-form-contacto>
+    </mat-tab>
+
+    <mat-tab label="Contratante">
+        <vex-cliente-form-contratante></vex-cliente-form-contratante>
+    </mat-tab>
+
+    <mat-tab label="Titular">
+        <vex-cliente-form-titular></vex-cliente-form-titular>
     </mat-tab>
 
     <mat-tab label="Accionistas" *ngIf="isPersonaJuridica">
@@ -41,6 +49,10 @@
         <div class="py-2">
             <button mat-button (click)="changeTab('informacion-de-contacto')">Información de
                 Contacto
+            </button>
+        </div>
+        <div class="py-2">
+            <button mat-button (click)="changeTab('informacion-de-contacto')">Contratante
             </button>
         </div>
         <mat-divider></mat-divider>

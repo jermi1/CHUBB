@@ -1,6 +1,21 @@
 <div class="p-9">
+    <div fxLayout="column" fxLayoutGap="16px">
 
-    <div class="pb-8" fxLayout="row" fxLayoutGap="16px" fxLayoutAlign="space-between center">
+        <div>
+          <button color="primary" mat-raised-button type="button">
+            <ic-icon [icon]="icCloudUpload" class="ltr:-ml-1 rtl:-mr-1 ltr:mr-2 rtl:ml-2" inline="true"
+              size="24px"></ic-icon>
+            <span>Subir archivo de clientes</span>
+          </button>
+
+          <button color="primary-300" mat-raised-button type="button" class="ml-5">
+            <span>Registrar cliente</span>
+          </button>
+        </div>
+
+      </div>
+
+    <div class="pb-8 mt-5" fxLayout="row" fxLayoutGap="16px" fxLayoutAlign="space-between center">
         <mat-radio-group color="accent" fxLayout="row" fxLayoutGap="16px" (change)="cambioTipoPersona($event)">
             <mat-radio-button [checked]="personaNatural" color="primary" value="1">Persona Natural</mat-radio-button>
             <mat-radio-button [checked]="!personaNatural" color="primary" value="2">Persona Jurídica</mat-radio-button>
@@ -11,6 +26,11 @@
     </div>
 
     <div class="pb-0" fxLayout.lt-sm="column" fxLayoutGap="16px" fxLayoutGap.lt-sm="0" *ngIf="personaNatural">
+        <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+            <mat-label>Codigo Afiliado</mat-label>
+            <input matInput [value]="cliente.codigoAfiliado">
+        </mat-form-field>
+
         <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
             <mat-label>Nombres</mat-label>
             <input matInput [value]="cliente.nombre">
@@ -26,19 +46,21 @@
             <input matInput [value]="cliente.apellidoMaterno">
         </mat-form-field>
     </div>
-
+    
+    
+    
     <div class="pb-0" fxLayout.lt-sm="column" fxLayoutGap="16px" fxLayoutGap.lt-sm="0">
-
+        
         <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="50" *ngIf="!personaNatural">
             <mat-label>Razón Social</mat-label>
             <input matInput [value]="cliente.nombre">
         </mat-form-field>
-
+        
         <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto" *ngIf="!personaNatural">
             <mat-label>RUC</mat-label>
             <input matInput>
         </mat-form-field>
-
+        
         <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto" *ngIf="personaNatural">
             <mat-label>Nacionalidad</mat-label>
             <mat-select [(value)]="cliente.nacionalidad">
@@ -47,15 +69,15 @@
                 <mat-option value="BR">Brazil</mat-option>
             </mat-select>
         </mat-form-field>
-
+        
         <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto" *ngIf="personaNatural">
             <mat-label>Fecha de Nacimento</mat-label>
             <input (click)="formDatepickerRef.open()" (focus)="formDatepickerRef.open()"
-                [matDatepicker]="formDatepickerRef" matInput [formControl]="fechaNacimiento" readonly>
+            [matDatepicker]="formDatepickerRef" matInput [formControl]="fechaNacimiento" readonly>
             <mat-datepicker-toggle [for]="formDatepickerRef" matSuffix></mat-datepicker-toggle>
             <mat-datepicker #formDatepickerRef></mat-datepicker>
         </mat-form-field>
-
+        
         <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto" *ngIf="personaNatural">
             <mat-label>Genero</mat-label>
             <mat-select [(value)]="cliente.genero">
@@ -63,16 +85,54 @@
                 <mat-option value="F">Femenino</mat-option>
             </mat-select>
         </mat-form-field>
-
+        
         <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
             <mat-label>Fecha de Ingreso</mat-label>
             <input (click)="formDatepickerRef.open()" (focus)="formDatepickerRef.open()"
-                [matDatepicker]="formDatepickerRef" matInput [formControl]="fechaIngreso" readonly>
+            [matDatepicker]="formDatepickerRef" matInput [formControl]="fechaIngreso" readonly>
             <mat-datepicker-toggle [for]="formDatepickerRef" matSuffix></mat-datepicker-toggle>
             <mat-datepicker #formDatepickerRef></mat-datepicker>
         </mat-form-field>
-
     </div>
+    <!--Tercera-->
+    <!--Tercera-->
+    <!--Tercera-->
+    <div class="pb-0" fxLayout.lt-sm="column" fxLayoutGap="16px" fxLayoutGap.lt-sm="0">
+        <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto" *ngIf="personaNatural">
+            <mat-label>Estado Matital</mat-label>
+            <mat-select>
+                <mat-option value="S">Soltero</mat-option>
+                <mat-option value="C">Casado</mat-option>
+                <mat-option value="V">Viudo</mat-option>
+                <mat-option value="D">Divorciado</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+            <mat-label>Número de Identificación de Afiliado</mat-label>
+            <input matInput>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+            <mat-label>Número de Documento SCTR</mat-label>
+            <input matInput>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+            <mat-label>Estado</mat-label>
+            <mat-select [(value)]="cliente.genero">
+                <mat-option value="M">Vigente</mat-option>
+                <mat-option value="SC">Sin Cobertura</mat-option>
+                <mat-option value="I">Inactivo</mat-option>
+                <mat-option value="S">Suspendido</mat-option>
+                <mat-option value="L">Latente</mat-option>
+                <mat-option value="R">Renovada</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    
+    
+   
 
     <div class="pb-5" fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="16px" *ngIf="personaNatural">
 

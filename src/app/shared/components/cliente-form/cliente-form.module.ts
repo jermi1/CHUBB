@@ -35,6 +35,8 @@ import {ClienteFormComisionesComponent} from './cliente-form-comisiones/cliente-
 import { ClienteFormAccesosComponent } from './cliente-form-accesos/cliente-form-accesos.component';
 import { ClienteFormArchivosModule } from './cliente-form-archivos/cliente-form-archivos.module';
 import { ClientFormAccionistasComponent } from './client-form-accionistas/client-form-accionistas.component';
+import { ClienteFormContratanteComponent } from './cliente-form-contratante/cliente-form-contratante.component';
+import { ClienteFormTitularComponent } from './cliente-form-titular/cliente-form-titular.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +47,8 @@ import { ClientFormAccionistasComponent } from './client-form-accionistas/client
     ClienteFormComisionesComponent,
     ClienteFormAccesosComponent,
     ClientFormAccionistasComponent,
+    ClienteFormContratanteComponent,
+    ClienteFormTitularComponent
   ],
   imports: [
     CommonModule,
@@ -73,6 +77,7 @@ import { ClientFormAccionistasComponent } from './client-form-accionistas/client
     RouterModule,
     LayoutModule,
     ClienteFormArchivosModule
+
   ],
   exports: [
     ClienteFormComponent,

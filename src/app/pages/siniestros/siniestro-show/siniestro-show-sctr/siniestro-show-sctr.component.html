@@ -1,0 +1,179 @@
+<vex-page-layout class="p-5" mode="card">
+
+    <vex-page-layout-content vexContainer>
+        <div fxLayout="column" fxLayoutGap="16px" class="mb-4">
+
+            <div>
+              <button color="primary" mat-raised-button type="button">
+                <ic-icon [icon]="icCloudUpload" class="ltr:-ml-1 rtl:-mr-1 ltr:mr-2 rtl:ml-2" inline="true"
+                  size="24px"></ic-icon>
+                <span>Subir archivo de SCTR</span>
+              </button>
+
+              <button color="primary-300" mat-raised-button type="button" class="ml-5">
+                <span>Registrar SCTR</span>
+              </button>
+            </div>
+
+          </div>
+
+        <div class="mb-4">
+            <h4 class="text-primary-500 d-none">Datos de Accidente</h4>
+          </div>
+            <div fxLayout="row" fxLayoutGap="8px">
+                    <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+                        <mat-label>Tipo de Accidente</mat-label>
+                        <mat-select>
+                            <mat-option>Accidente de Trabajo</mat-option>
+                            <mat-option>Accidente de Estudiante</mat-option>
+                            <mat-option>Enfermedades Profesionales</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                
+                    <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+                        <mat-label>Nº de Declaración de Accidente</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+                        <mat-label>Fecha de Ocurrencia</mat-label>
+                        <input (click)="formDatepickerRef2.open()" (focus)="formDatepickerRef2.open()"
+                            [matDatepicker]="formDatepickerRef2" matInput readonly>
+                        <mat-datepicker-toggle [for]="formDatepickerRef2" matSuffix></mat-datepicker-toggle>
+                        <mat-datepicker #formDatepickerRef2></mat-datepicker>
+                    </mat-form-field>
+               
+                </div>
+
+            <div fxLayout="row" fxLayoutGap="8px">
+                <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+                    <mat-label>Descripción</mat-label>
+                    <input matInput>
+                </mat-form-field>
+
+                </div>
+
+                <div class="mb-4">
+
+                    <h4 class="text-primary-500 d-none">Lugar de Atención</h4>
+                  </div>
+
+                <div fxLayout="row" fxLayoutGap="8px">
+                    <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+                        <mat-label>Tipo Calificador</mat-label>
+                        <mat-select>
+                            <mat-option>Persona</mat-option>
+                            <mat-option>No persona</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+                        <mat-label>Nombre de Empresa</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+                        <mat-label>Codigo de Empresa</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+                        <mat-label>Identificador Calificador de Referencia</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                    
+                </div>
+                <div fxLayout="row" fxLayoutGap="8px">
+                    <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+                        <mat-label>Referencia de Identificación</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+                        <mat-label>Nº de Declaración de Accidente</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                
+                </div>
+                
+                <div class="mb-4">
+
+                    <h4 class="text-primary-500 d-none">Carta de Garantía</h4>
+                  </div>
+
+                <div fxLayout="row" fxLayoutGap="8px">
+                    <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+                        <mat-label>Carta de Garantía</mat-label>
+                        <mat-select>
+                            <mat-option>No Necesita Autorización</mat-option>
+                            <mat-option>Necesita Autorización</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+                        <mat-label>Número Carta de Garantía</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+        
+                    <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+                        <mat-label>Estado Carta de Garantía</mat-label>
+                        <mat-select>
+                            <mat-option>Aprobado</mat-option>
+                            <mat-option>Observado</mat-option>
+                            <mat-option>Rechazada</mat-option>
+                            <mat-option>Anulada</mat-option>
+                            <mat-option>En trámite</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+   
+
+                <div fxLayout="row" fxLayoutGap="8px">
+                    <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+                        <mat-label>Monto de Pago</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+                        <mat-label>Nº de Solicitud</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+                        <mat-label>Versión</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+                        <mat-label>Fecha de Carta de Garantía</mat-label>
+                        <input (click)="formDatepickerRef6.open()" (focus)="formDatepickerRef6.open()"
+                            [matDatepicker]="formDatepickerRef6" matInput readonly>
+                        <mat-datepicker-toggle [for]="formDatepickerRef6" matSuffix></mat-datepicker-toggle>
+                        <mat-datepicker #formDatepickerRef6></mat-datepicker>
+                    </mat-form-field>
+           
+                </div>
+
+                <div fxLayout="row" fxLayoutGap="8px">
+                    <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+                        <mat-label>Descripción Plan de Cobertura</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+                        <mat-label>Descripción Carta de Garantía</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+
+                </div>
+
+
+                <div fxLayout="row" fxLayoutGap="8px">
+                    <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+                        <mat-label>Descripción del Procedimiento</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+
+                </div>
+
+    </vex-page-layout-content>
+
+</vex-page-layout>
+
+
+

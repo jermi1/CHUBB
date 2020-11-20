@@ -3,6 +3,7 @@ import { Cliente } from '../app/pages/clientes/interfaces/cliente.interface';
 export const clientesData: Cliente[] = [
   {
     id: 1,
+    codigoAfiliado: 'ASEG-20-965',
     nombre: 'Diego Alonso',
     apellidoPaterno: 'Alvarado',
     apellidoMaterno: 'Alatrista',

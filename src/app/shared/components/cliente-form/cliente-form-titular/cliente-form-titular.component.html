@@ -1,0 +1,72 @@
+<div class="p-9">
+    <div class="pb-5" fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="16px">
+  
+      <div>
+        <h4 class="text-primary-500">Datos del Titular</h4>
+      </div>
+  <!--    <div>
+        <button mat-button color="primary">Agregar dirección</button>
+      </div>
+    -->
+    </div>
+  
+    <div class="pb-0" fxLayout.lt-sm="column" fxLayoutGap="16px" fxLayoutGap.lt-sm="0">
+      <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto" >
+        <mat-label>Calificador del Titular</mat-label>
+        <mat-select>
+          <mat-option>Persona</mat-option>
+          <mat-option>No Persona</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+  
+      <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+        <mat-label>Apellidos Paterno</mat-label>
+        <input matInput>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+        <mat-label>Apellidos Materno</mat-label>
+        <input matInput>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+        <mat-label>Nombres</mat-label>
+        <input matInput>
+      </mat-form-field>
+  
+    </div>
+  
+
+    <div class="pb-0" fxLayout.lt-sm="column" fxLayoutGap="16px" fxLayoutGap.lt-sm="0">
+        <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+            <mat-label>Codigo de Titular</mat-label>
+            <input matInput>
+          </mat-form-field>
+
+        <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="15">
+            <mat-label>Tipo de Documento</mat-label>
+            <mat-select>
+                <mat-option value="1">DNI</mat-option>
+                <mat-option value="2">C.E.</mat-option>
+                <mat-option value="3">PAS</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="25">
+            <mat-label>Nº Documento</mat-label>
+            <input matInput>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+            <mat-label>Identificador Calificador de Referencia de Titular</mat-label>
+            <input matInput>
+          </mat-form-field>
+
+    </div>
+    
+    
+   
+  </div>
+  
+  

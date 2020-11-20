@@ -30,23 +30,29 @@
       <mat-tab-group>
         <mat-tab label="Póliza">
           <div class="p-6">
-<!--            
+   
             <div fxLayout="column" fxLayoutGap="16px">
+
               <div>
                 <button color="primary" mat-raised-button type="button">
                   <ic-icon [icon]="icCloudUpload" class="ltr:-ml-1 rtl:-mr-1 ltr:mr-2 rtl:ml-2" inline="true"
                     size="24px"></ic-icon>
-                  <span>Subir archivo de la póliza e importar datos</span>
+                  <span>Subir archivo de pólizas</span>
+                </button>
+
+                <button color="primary-300" mat-raised-button type="button" class="ml-5">
+                  <span>Registrar Póliza</span>
                 </button>
               </div>
+
             </div>
-            --> 
+
             <div class="mt-5">
 
               <h4 class="text-primary-500 d-none">Información de la Póliza</h4>
             </div>
 
-            <div class="pb-8" fxLayout="row" fxLayoutGap="16px" fxLayoutAlign="space-between center">
+            <div class="pb-2" fxLayout="row" fxLayoutGap="16px" fxLayoutAlign="space-between center">
               <mat-radio-group color="accent" fxLayout="row" fxLayoutGap="16px" (change)="cambioTipoPersona($event)">
               </mat-radio-group>
               <div fxLayout="row" fxLayoutGap="16px">
@@ -60,25 +66,103 @@
                 <mat-label>Número de Póliza</mat-label>
                 <input matInput>
               </mat-form-field> 
+      
               <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
-                <mat-label>Ramo</mat-label>
-                <mat-select>
-                    <mat-option>Asistencia Médica</mat-option>
-                    <mat-option>...</mat-option>
-                </mat-select>
-            </mat-form-field>
+                <mat-label>Codigo de Contrato</mat-label>
+                <input matInput>
+              </mat-form-field> 
+            
+              <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+                <mat-label>Inicio de Vigencia</mat-label>
+                <input (click)="formDatepickerRef6.open()" (focus)="formDatepickerRef6.open()"
+                  [matDatepicker]="formDatepickerRef6" matInput readonly>
+                <mat-datepicker-toggle [for]="formDatepickerRef6" matSuffix></mat-datepicker-toggle>
+                <mat-datepicker #formDatepickerRef6></mat-datepicker>
+              </mat-form-field>
 
               <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
-                <mat-label>Producto</mat-label>
-                <mat-select>
-                    <mat-option>...</mat-option>
-                    <mat-option>...</mat-option>
-                </mat-select>
-            </mat-form-field>
+                <mat-label>Fin de Vigencia</mat-label>
+                <input (click)="formDatepickerRef7.open()" (focus)="formDatepickerRef7.open()"
+                  [matDatepicker]="formDatepickerRef7" matInput readonly>
+                <mat-datepicker-toggle [for]="formDatepickerRef7" matSuffix></mat-datepicker-toggle>
+                <mat-datepicker #formDatepickerRef7></mat-datepicker>
+              </mat-form-field>
 
+           
             </div>
 
             <div fxLayout="row" fxLayoutGap="8px">
+
+            <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+              <mat-label>Ramo</mat-label>
+              <mat-select>
+                  <mat-option>Asistencia Médica</mat-option>
+                  <mat-option>...</mat-option>
+              </mat-select>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+            <mat-label>Cliente</mat-label>
+            <input matInput>
+          </mat-form-field> 
+
+            <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+              <mat-label>Producto</mat-label>
+              <mat-select>
+                  <mat-option>...</mat-option>
+                  <mat-option>...</mat-option>
+              </mat-select>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+            <mat-label>Contratante</mat-label>
+            <input matInput>
+          </mat-form-field> 
+            </div>
+
+            
+            <div  fxLayout="row" fxLayoutGap="8px">
+        
+              <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+                <mat-label>Codigo Parentesco Afiliado</mat-label>
+                <input matInput>
+              </mat-form-field>
+      
+              <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+                <mat-label>Fecha Inscripcion de Titular</mat-label>
+                <input (click)="formDatepickerRef4.open()" (focus)="formDatepickerRef4.open()"
+                [matDatepicker]="formDatepickerRef4" matInput readonly>
+                <mat-datepicker-toggle [for]="formDatepickerRef4" matSuffix></mat-datepicker-toggle>
+                <mat-datepicker #formDatepickerRef4></mat-datepicker>
+              </mat-form-field>
+              
+              <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+                <mat-label>Estado de Cobertura</mat-label>
+                <mat-select>
+                    <mat-option>Activa</mat-option>
+                    <mat-option>Inactiva</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+              <mat-label>Estado de Poliza</mat-label>
+              <mat-select>
+                  <mat-option>Vigente</mat-option>
+                  <mat-option>No Vigente</mat-option>
+              </mat-select>
+          </mat-form-field>
+    
+            </div>
+
+            <div class="mt-4">
+
+              <h4 class="text-primary-500 d-none pb-4">Información del Certificado</h4>
+            </div>
+            <div fxLayout="row" fxLayoutGap="8px">
+
+              <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+                <mat-label>Número de Certificado</mat-label>
+                <input matInput>
+              </mat-form-field> 
 
               <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
                 <mat-label>Inicio de Vigencia</mat-label>
@@ -96,45 +180,14 @@
                 <mat-datepicker #formDatepickerRef3></mat-datepicker>
               </mat-form-field>
             </div>
-        <div class="mt-2" fxLayout="row" fxLayoutGap="8px">
-        
-          <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
-            <mat-label>Codigo Parentesco Afiliado</mat-label>
-            <input matInput>
-          </mat-form-field>
-  
-          <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
-            <mat-label>Fecha Inscripcion de Titular</mat-label>
-            <input (click)="formDatepickerRef4.open()" (focus)="formDatepickerRef4.open()"
-            [matDatepicker]="formDatepickerRef4" matInput readonly>
-            <mat-datepicker-toggle [for]="formDatepickerRef4" matSuffix></mat-datepicker-toggle>
-            <mat-datepicker #formDatepickerRef4></mat-datepicker>
-          </mat-form-field>
-          
-          <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
-            <mat-label>Estado de Cobertura</mat-label>
-            <mat-select>
-                <mat-option>...</mat-option>
-                <mat-option>...</mat-option>
-            </mat-select>
-        </mat-form-field>
-        <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
-          <mat-label>Estado de Poliza</mat-label>
-          <mat-select>
-              <mat-option>Vigente</mat-option>
-              <mat-option>Anulado</mat-option>
-              <mat-option>Suspedido</mat-option>
-          </mat-select>
-      </mat-form-field>
 
-        </div>
         
         
         
-        <div class="mt-2" fxLayout="row" fxLayoutGap="8px">
+        <div class="mt-0" fxLayout="row" fxLayoutGap="8px">
           
           
-              <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="30" *ngIf="personaNatural">
+              <mat-form-field appearance="outline" class="vex-flex-form-fieldn mt-0" fxFlex="30" *ngIf="personaNatural">
                  <!-- <mat-label>Institución u Organismo Público al que pertenece</mat-label>-->
                  <textarea matInput
                  placeholder="Observación de la Cobertura"
@@ -160,6 +213,105 @@
             </div>
             </mat-tab>
             
+
+            <mat-tab label="Historial">
+              <div class="p-6">
+                <div fxLayout="column" fxLayoutGap="16px">
+
+                  <div>
+                    <button color="primary" mat-raised-button type="button">
+                      <ic-icon [icon]="icCloudUpload" class="ltr:-ml-1 rtl:-mr-1 ltr:mr-2 rtl:ml-2" inline="true"
+                        size="24px"></ic-icon>
+                      <span>Subir archivo para el historial - poliza</span>
+                    </button>
+    
+                    <button color="primary-300" mat-raised-button type="button" class="ml-5">
+                      <span>Registrar en el Historial</span>
+                    </button>
+                  </div>
+    
+                </div>
+                
+            
+            <!--    <div fxLayout="column" fxLayoutGap="16px">
+    
+                  <div>
+                    <button color="primary" mat-raised-button type="button">
+                      <ic-icon [icon]="icCloudUpload" class="ltr:-ml-1 rtl:-mr-1 ltr:mr-2 rtl:ml-2" inline="true"
+                        size="24px"></ic-icon>
+                      <span>Subir archivo de cronograma de pagos</span>
+                    </button>
+                    <button color="primary-300" mat-raised-button type="button" class="ml-5">
+                      <span>Registrar pago</span>
+                    </button>
+                  </div>
+    
+                </div>-->
+              
+
+                <div  fxLayout="column" fxLayoutGap="16px" class="pt-6">
+
+                  <h4 class="text-primary-500">Datos del Historial</h4> 
+
+                  <div class="mt-1 mb-0" fxLayout="row" fxLayoutGap="8px">
+    
+                    <mat-form-field appearance="outline" >
+                      <mat-label>Buscar Poliza en el Historial</mat-label>
+                      <input matInput>
+                      <mat-icon [icIcon]="icSearch" class="ltr:mr-3 rtl:ml-3" matSuffix></mat-icon>
+                    </mat-form-field>
+                  </div>
+                 
+                  <table mat-table [dataSource]="dataSource" class="w-full mt-0"
+                  fxFlex="auto"
+                  matSort>
+              
+                    <ng-container matColumnDef="name">
+                      <th mat-header-cell *matHeaderCellDef> Ramo </th>
+                      <td mat-cell *matCellDef="let element"> {{element.documento}} </td>
+                    </ng-container>
+                  
+                    <ng-container matColumnDef="documento">
+                      <th mat-header-cell *matHeaderCellDef> Producto </th>
+                      <td mat-cell *matCellDef="let element"> {{element.documento}} </td>
+                    </ng-container>
+                  
+                    <ng-container matColumnDef="telefono">
+                      <th mat-header-cell *matHeaderCellDef> Nº Certificado </th>
+                      <td mat-cell *matCellDef="let element"> {{element.telefono}} </td>
+                    </ng-container>
+                  
+                    <ng-container matColumnDef="email">
+                      <th mat-header-cell *matHeaderCellDef> Poliza </th>
+                      <td mat-cell *matCellDef="let element"> {{element.telefono}} </td>
+                    </ng-container>
+              
+                    <ng-container matColumnDef="etiquetas">
+                      <th mat-header-cell *matHeaderCellDef> Siniestro </th>
+                      <td mat-cell *matCellDef="let element"> {{element.etiquetas}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="registro">
+                      <th mat-header-cell *matHeaderCellDef> Fecha de Registro/Actualización </th>
+                      <td mat-cell *matCellDef="let element"> {{element.etiquetas}} </td>
+                    </ng-container>
+              
+                    <ng-container matColumnDef="actions">
+                      <th mat-header-cell *matHeaderCellDef>  </th>
+                      <td mat-cell *matCellDef="let element" class="text-right"> <button color="primary" mat-button type="button">VER DETALLE</button> </td>
+                    </ng-container>
+                  
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                  </table>
+              
+                </div>
+   
+ 
+              </div>
+            </mat-tab>
+    
+    
                     
         <mat-tab label="Contratante">
           <div class="p-6">

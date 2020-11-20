@@ -203,7 +203,6 @@ export class AppComponent {
             }
           ]
       },
-      
       {
         type: 'link',
         label: 'Referenciadores',
@@ -216,6 +215,11 @@ export class AppComponent {
         label: 'Configuración',
         icon: icSettings,
         children: [
+          {
+            type: 'link',
+            label: 'Usuarios',
+            route: '/usuarios',
+          },
           {
             type: 'link',
             label: 'Configuración General',

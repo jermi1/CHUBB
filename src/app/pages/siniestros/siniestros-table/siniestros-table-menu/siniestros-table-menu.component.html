@@ -1,7 +1,7 @@
-<div @stagger class="max-w-xxxs w-full">
+<div @stagger class="max-w-xxxs w-full menuSiniestro">
   <div class="h-14 mb-6 flex bg-primary-500 px-gutter sm:px-0" fxLayout="row" fxLayoutAlign="start center">
     <!-- <button [routerLink]="['/siniestros/editar']" class="flex-auto" mat-raised-button type="button"> -->
-    <button [routerLink]="['/siniestros/editar']" class="flex-auto" mat-raised-button type="button">
+    <button [routerLink]="['/siniestros/editar/detalles-siniestro']" class="flex-auto" mat-raised-button type="button">
       <ic-icon [icon]="icAddCircle" class="ltr:mr-3 rtl:ml-3" inline="true" size="18px"></ic-icon>
       <span>AGREGAR SINIESTRO</span>
     </button>
@@ -24,5 +24,12 @@
           @fadeInRight
           class="caption text-secondary uppercase font-medium mb-0 mt-6">{{ item.label }}</h3>
     </ng-container>
+  </div>
+  <div  class="h-14 flex  px-gutter sm:px-0 divbtnSiniestro" fxLayout="row" fxLayoutAlign="start center">
+    <!-- <button [routerLink]="['/polizas/editar']" (click)="openAddNew.emit()" class="flex-auto" mat-raised-button type="button"> -->
+    <button [routerLink]="['/siniestros/editar/carga']" color="primary" mat-raised-button  class="flex-auto"  type="button">
+      <ic-icon [icon]="icAddCircle" class="ltr:mr-3 rtl:ml-3" inline="true" size="18px"></ic-icon>
+      <span>CARGAR SINIESTRO</span>
+    </button>
   </div>
 </div>

@@ -44,8 +44,20 @@ export class SiniestroShowComponent implements OnInit {
 
     this.navLinks = [
       {
-        'label': 'Detalles del siniestro',
+        'label': 'Siniestro',
         'path': routerPrefix + '/detalles-siniestro'
+      },
+      {
+        'label': 'SCTR',
+        'path': routerPrefix + '/sctr'
+      },
+      {
+        'label': 'Carta de Garantía - Siniestro',
+        'path': routerPrefix + '/siniestro-cg'
+      },
+      {
+        'label': 'Condición Medica',
+        'path': routerPrefix + '/condicion-medica'
       },
       {
         'label': 'Póliza',
@@ -54,6 +66,10 @@ export class SiniestroShowComponent implements OnInit {
       {
         'label': 'Cliente',
         'path': routerPrefix + '/cliente'
+      },
+      {
+        'label': 'Cargar Siniestros',
+        'path': routerPrefix + '/carga'
       }
     ];
   }

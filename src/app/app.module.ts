@@ -10,11 +10,8 @@ import { CustomLayoutModule } from './custom-layout/custom-layout.module';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
-
-import {ClienteFormGeneralComponent} from './shared/components/cliente-form/cliente-form-general/cliente-form-general.component';
-import {ClienteFormContactoComponent} from './shared/components/cliente-form/cliente-form-contacto/cliente-form-contacto.component';
-import {ClienteFormVinculadosComponent} from './shared/components/cliente-form/cliente-form-vinculados/cliente-form-vinculados.component';
+// import { UsuarioTableComponent } from './pages/usuarios/usuario-table/usuario-table.component';
+// import { UsuariosComponent } from './pages/usuarios/usuarios.component';
 
 @NgModule({
   declarations: [AppComponent

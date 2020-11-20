@@ -5,6 +5,7 @@ export interface Cliente {
     id: number,
     nombre: 'Persona Natural' | 'Persona Jurídica'
   };
+  codigoAfiliado?: string;
   nombre: string;
   apellidoPaterno?: string;
   apellidoMaterno?: string;
