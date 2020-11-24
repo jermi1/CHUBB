@@ -52,7 +52,6 @@ import {ClienteFormModule} from '../../../shared/components/cliente-form/cliente
     MatInputModule,
     MatTableModule,
     MatDividerModule,
-    ClienteFormModule
   ]
 })
 export class UsuarioCrearModule {

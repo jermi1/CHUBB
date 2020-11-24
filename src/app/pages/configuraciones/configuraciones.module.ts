@@ -20,6 +20,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
 import {MatTableModule} from '@angular/material/table';
+import {MatDividerModule} from '@angular/material/divider';
 
 import {ClienteFormModule} from '../../shared/components/cliente-form/cliente-form.module';
 
@@ -46,6 +47,7 @@ import {ClienteFormModule} from '../../shared/components/cliente-form/cliente-fo
     ReactiveFormsModule,
     MatInputModule,
     MatTableModule,
+    MatDividerModule,
     ClienteFormModule
   ]
 })

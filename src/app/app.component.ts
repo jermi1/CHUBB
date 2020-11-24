@@ -222,7 +222,12 @@ export class AppComponent {
           },
           {
             type: 'link',
-            label: 'Configuración General',
+            label: 'Roles por Usuario',
+            route: '/roles-permisos',
+          },
+          {
+            type: 'link',
+            label: 'Productos',
             route: '/configuraciones',
           },
     /*      {
@@ -231,11 +236,6 @@ export class AppComponent {
             route: '/tarifarios',
           },
 */
-          {
-            type: 'link',
-            label: 'Roles y Permisos',
-            route: '/roles-permisos',
-          }
 /*
           {
             type: 'link',

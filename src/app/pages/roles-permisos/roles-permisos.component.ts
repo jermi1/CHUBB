@@ -9,6 +9,8 @@ import icMap from '@iconify/icons-ic/twotone-map';
 import icSearch from '@iconify/icons-ic/twotone-search';
 import icCloudDownload from '@iconify/icons-ic/twotone-cloud-download';
 import icArrowDropDown from '@iconify/icons-ic/twotone-arrow-drop-down';
+import icpeople from '@iconify/icons-ic/people';
+
 import {MatFormFieldModule} from '@angular/material/form-field';
 
 
@@ -25,7 +27,7 @@ const ELEMENT_DATA_PADRE: PeriodicElement[] = [
   {
     name: 'Materia Gris SAC',
     documento: 'RUC 204503774622',
-    telefono: '(819)846-2365',
+    telefono: 'Activo',
     email: 'dennis.oliver@mail.com',
     etiquetas: 'VIP',
     actions: true
@@ -35,24 +37,24 @@ const ELEMENT_DATA_PADRE: PeriodicElement[] = [
 const ELEMENT_DATA: PeriodicElement[] = [
   {
     name: 'Diego Alonso Alvarado Alatrista',
-    documento: 'RUC 204503774622',
-    telefono: '(819)846-2365',
-    email: 'dennis.oliver@mail.com',
-    etiquetas: 'VIP', actions: true},
+    documento: 'DieAlv',
+    telefono: 'Activo',
+    email: 'Master',
+    etiquetas: '08/10/2020', actions: true},
   {
-    name: 'Bluebox Trading SAC',
-    documento: 'DNI 45055471',
-    telefono: '(017)342-8274',
-    email: 'craig.rivera@mail.com',
-    etiquetas: 'VIP',
+    name: 'Ricardo Deza',
+    documento: 'RDeza1',
+    telefono: 'Activo',
+    email: 'Administrador',
+    etiquetas: '12/10/2020',
     actions: true
   },
   {
     name: 'Cesar Augusto Torres Brito',
-    documento: 'DNI 89299292',
-    telefono: '(851)074-4972',
-    email: 'johnny.palmer@mail.com',
-    etiquetas: 'VIP',
+    documento: 'Cesar1',
+    telefono: 'Activo',
+    email: 'Administrador',
+    etiquetas: '23/11/2020',
     actions: true
   }
 ];
@@ -77,6 +79,7 @@ export class RolesPermisosComponent implements OnInit {
   icSearch = icSearch;
   icCloudDownload = icCloudDownload;
   icArrowDropDown = icArrowDropDown;
+  icPeople = icpeople;
   
 
   personaNatural = true;

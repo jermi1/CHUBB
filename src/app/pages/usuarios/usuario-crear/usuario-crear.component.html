@@ -11,13 +11,10 @@
 
                 <div>
                     <h2 class="title m-0">
-                        <span *ngIf="cliente.tipo.id == 1">{{ usuario.apellidoPaterno }} {{ usuario.apellidoMaterno }},
-                            {{ usuario.nombre }}</span>
-                        <span *ngIf="cliente.tipo.id == 2">{{ usuario.nombre }}</span>
+                        <span >Agregar / Editar Usuario</span>
                     </h2>
                     <div>
-                        <span *ngIf="cliente.tipo.id == 1">DNI 45055471 - Materia Gris</span>
-                        <span *ngIf="cliente.tipo.id == 2">RUC 20450554711</span>
+                        <span>DNI 45055471 - Materia Gris</span>
                     </div>
                 </div>
             </div>
@@ -39,7 +36,96 @@
 
     <vex-page-layout-content vexContainer>
         <div class="card">
-            <vex-usuario-form [usuario]="usuario"></vex-usuario-form>
+            <mat-tab-group>
+            
+
+            <mat-tab label="Datos del Usuario">
+                <div class="p-6">
+         
+      
+                  <div class="mt-2">
+      
+                    <h4 class="text-primary-500 d-none">Información del Usuario</h4>
+                  </div>
+      
+                  <div class="mt-2" fxLayout="row" fxLayoutGap="8px" >
+      
+                    <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="25">
+                      <mat-label>Usuario</mat-label>
+                      <input matInput>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="25">
+                      <mat-label>Contraseña</mat-label>
+                      <input matInput type="password">
+                    </mat-form-field> 
+              
+                  </div>
+                  <div class="mt-2" fxLayout="row" fxLayoutGap="8px"  >
+                  <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+                    <mat-label>Nombres</mat-label>
+                    <input matInput>
+                  </mat-form-field>
+                  
+                  <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+                      <mat-label>Apellido Paterno</mat-label>
+                      <input matInput>
+                    </mat-form-field> 
+                    
+                  <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+                      <mat-label>Apellido Materno</mat-label>
+                      <input matInput>
+                    </mat-form-field> 
+                  </div>
+                 
+                    <div class="mt-4">
+      
+                    <h4 class="text-primary-500 d-none pb-4">Información de Contacto</h4>
+                  </div>
+                  <div fxLayout="row" fxLayoutGap="8px">
+                    <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+                        <mat-label>Tipo de Documento</mat-label>
+                        <mat-select>
+                            <mat-option>DNI</mat-option>
+                            <mat-option>RUC</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+        
+                      <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+                        <mat-label>Nro Documento</mat-label>
+                        <input matInput value="" readonly>
+                      </mat-form-field>
+                  </div>
+                  <div fxLayout="row" fxLayoutGap="8px">
+                    <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+                        <mat-label>Email</mat-label>
+                        <input matInput value="" readonly>
+                      </mat-form-field>
+        
+                      <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="auto">
+                        <mat-label>Celular</mat-label>
+                        <input matInput value="" readonly>
+                      </mat-form-field>
+                  </div>
+      
+              
+              
+              
+              <div class="mt-0" fxLayout="row" fxLayoutGap="8px">
+                
+                
+                    <mat-form-field appearance="outline" class="vex-flex-form-fieldn mt-0" fxFlex="30" *ngIf="personaNatural">
+                       <!-- <mat-label>Institución u Organismo Público al que pertenece</mat-label>-->
+                       <textarea matInput
+                       placeholder="Observación de la Cobertura"
+                       matTextareaAutosize matAutosizeMinRows="2"
+                       matAutosizeMaxRows="5"
+                       ></textarea>
+                      </mat-form-field>
+                    </div>
+      
+                  </div>
+                  </mat-tab>
+            </mat-tab-group>
         </div>
     </vex-page-layout-content>
 

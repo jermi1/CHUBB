@@ -1,9 +1,12 @@
-<vex-page-layout mode="card">
+  <vex-page-layout mode="card">
   <vex-page-layout-header fxLayout="row" fxLayoutAlign="space-between center">
     <div>
       <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="25px">
         <div>
-          <h2 class="title m-0">Roles y Permisos</h2>
+          <h2 class="headline text-primary-contrast-500 m-0 flex items-center w-full max-w-xxxs mr-6">
+            <ic-icon @scaleIn [icon]="icPeople" class="hidden sm:block"></ic-icon>
+            <span @fadeInRight class="ml-4 block">Roles por Usuario</span>
+        </h2>
         </div>
       </div>
     </div>
@@ -21,21 +24,67 @@
 
       <div class="p-6">
 
-        <h4 class="text-primary-500 mb-5">Seleccionar rol a modificar</h4>
+        <h4 class="text-primary-500 mb-5">Seleccionar rol</h4>
 
         <div class="pb-0" fxLayout.lt-sm="column" fxLayoutGap="16px">
           <mat-form-field appearance="outline" class="vex-flex-form-field" fxFlex="25">
             <mat-label>Rol</mat-label>
             <mat-select>
               <mat-option value="">Administrador</mat-option>
-              <mat-option value="">...</mat-option>
-              <mat-option value="">...</mat-option>
+              <mat-option value="">Master</mat-option>
             </mat-select>
           </mat-form-field>
 
+          <div
+          class="hidden sm:flex items-center bg-card rounded-full overflow-hidden relative ltr:pl-5 rtl:pr-5 h-12 max-w-md w-full shadow-8 mx-auto">
+          <ic-icon [icon]="icSearch" class="text-secondary flex-none" size="24px"></ic-icon>
+          <input [formControl]="searchCtrl"
+              class="border-0 h-12 outline-none ltr:pl-4 rtl:pr-4 placeholder:text-secondary bg-card flex-auto"
+              placeholder="Buscar Usuario..." type="text" />
+      </div>
         </div>
 
-        <h4 class="text-primary-500 mb-5">Activar / desactivar acceso a funcionalidades</h4>
+        <h4 class="text-primary-500 mb-5">Usuarios</h4>
+        <div class="pb-0" fxLayout.lt-sm="column" fxLayoutGap="16px">
+    
+        <table mat-table [dataSource]="dataSource" class="w-full"
+        fxFlex="auto"
+        matSort>
+    
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef>Usuario </th>
+            <td mat-cell *matCellDef="let element"> {{element.documento}} </td>
+          </ng-container>
+        
+          <ng-container matColumnDef="documento">
+            <th mat-header-cell *matHeaderCellDef> Nombre </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+          </ng-container>
+        
+          <ng-container matColumnDef="telefono">
+            <th mat-header-cell *matHeaderCellDef> Rol </th>
+            <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+          </ng-container>
+        
+          <ng-container matColumnDef="email">
+            <th mat-header-cell *matHeaderCellDef> Fecha Creación </th>
+            <td mat-cell *matCellDef="let element"> {{element.etiquetas}} </td>
+          </ng-container>
+    
+          <ng-container matColumnDef="etiquetas">
+            <th mat-header-cell *matHeaderCellDef> Estado </th>
+            <td mat-cell *matCellDef="let element"> {{element.telefono}} </td>
+          </ng-container>
+    
+          <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef>  </th>
+            <td mat-cell *matCellDef="let element" class="text-right"> <button color="primary" mat-button type="button">VER DETALLE</button> </td>
+          </ng-container>
+        
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+        </div>    
 <!--
         <h6 class="pb-4">Dashboard</h6>
 
@@ -57,117 +106,7 @@
 
         </div>
 -->
-        <h6 class="pb-4 pt-6">Clientes</h6>
-
-        <mat-divider color="accent"></mat-divider>
-        <div class="pt-4" fxLayout.lt-sm="column" fxLayoutGap="16px">
-
-          <mat-slide-toggle color="warn" class="example-margin" fxFlex="25">
-            Funcionalidad
-          </mat-slide-toggle>
-          <mat-slide-toggle color="warn" class="example-margin" fxFlex="25">
-            Funcionalidad
-          </mat-slide-toggle>
-          <mat-slide-toggle color="warn" class="example-margin" fxFlex="25">
-            Funcionalidad
-          </mat-slide-toggle>
-
-        </div>
-<!--
-        <h6 class="pb-4 pt-6">Cotizaciones</h6>
-
-        <mat-divider color="accent"></mat-divider>
-        <div class="pt-4" fxLayout.lt-sm="column" fxLayoutGap="16px">
-
-          <mat-slide-toggle color="warn" class="example-margin" fxFlex="25">
-            Funcionalidad
-          </mat-slide-toggle>
-          <mat-slide-toggle color="warn" class="example-margin" fxFlex="25">
-            Funcionalidad
-          </mat-slide-toggle>
-          <mat-slide-toggle color="warn" class="example-margin" fxFlex="25">
-            Funcionalidad
-          </mat-slide-toggle>
-          <mat-slide-toggle color="warn" class="example-margin" fxFlex="25">
-            Funcionalidad
-          </mat-slide-toggle>
-        </div>
-        <div class="pt-4" fxLayout.lt-sm="column" fxLayoutGap="16px">
-          
-          <mat-slide-toggle color="warn" class="example-margin" fxFlex="25">
-            Funcionalidad
-          </mat-slide-toggle>
-          <mat-slide-toggle color="warn" class="example-margin" fxFlex="25">
-            Funcionalidad
-          </mat-slide-toggle>
-          
-        </div>
-      -->
-
-        <h6 class="pb-4 pt-6">Pólizas</h6>
-
-        <mat-divider color="accent"></mat-divider>
-        <div class="pt-4" fxLayout.lt-sm="column" fxLayoutGap="16px">
-
-          <mat-slide-toggle color="warn" class="example-margin" fxFlex="25">
-            Funcionalidad
-          </mat-slide-toggle>
-          <mat-slide-toggle color="warn" class="example-margin" fxFlex="25">
-            Funcionalidad
-          </mat-slide-toggle>
-
-        </div>
-
-        <h6 class="pb-4 pt-6">Siniestros</h6>
-
-        <mat-divider color="accent"></mat-divider>
-        <div class="pt-4" fxLayout.lt-sm="column" fxLayoutGap="16px">
-
-          <mat-slide-toggle color="warn" class="example-margin" fxFlex="25">
-            Funcionalidad
-          </mat-slide-toggle>
-          <mat-slide-toggle color="warn" class="example-margin" fxFlex="25">
-            Funcionalidad
-          </mat-slide-toggle>
-
-        </div>
-<!--
-        <h6 class="pb-4 pt-6">Renovaciones</h6>
-
-        <mat-divider color="accent"></mat-divider>
-        <div class="pt-4" fxLayout.lt-sm="column" fxLayoutGap="16px">
-
-          <mat-slide-toggle color="warn" class="example-margin" fxFlex="25">
-            Funcionalidad
-          </mat-slide-toggle>
-          <mat-slide-toggle color="warn" class="example-margin" fxFlex="25">
-            Funcionalidad
-          </mat-slide-toggle>
-          <mat-slide-toggle color="warn" class="example-margin" fxFlex="25">
-            Funcionalidad
-          </mat-slide-toggle>
-
-        </div>
-        <h6 class="pb-4 pt-6">Referenciadores</h6>
-        
-        <mat-divider color="accent"></mat-divider>
-        <div class="pt-4" fxLayout.lt-sm="column" fxLayoutGap="16px">
-          
-          <mat-slide-toggle color="warn" class="example-margin" fxFlex="25">
-            Funcionalidad
-          </mat-slide-toggle>
-          <mat-slide-toggle color="warn" class="example-margin" fxFlex="25">
-            Funcionalidad
-          </mat-slide-toggle>
-          <mat-slide-toggle color="warn" class="example-margin" fxFlex="25">
-            Funcionalidad
-          </mat-slide-toggle>
-          <mat-slide-toggle color="warn" class="example-margin" fxFlex="25">
-            Funcionalidad
-          </mat-slide-toggle>
-          
-        </div>
-      -->
+     
       </div>
     </div>
     

@@ -64,6 +64,10 @@ if (url === 'http://localhost:4200/clientes')
     {
       this.combo = { placeholder: 'Tipo Cliente', uno: 'Persona Natural', dos: 'Persona Jurídica'};
     }
+    else if (url === 'http://localhost:4200/usuarios')
+    {
+      this.combo = { placeholder: 'Tipo Usuario', uno: 'Master', dos: 'Admin'};
+    }
     else {
       this.combo = { placeholder: 'Ramo', uno: 'Asistencia Médica', dos: 'Accidentes Personales'};
       }
