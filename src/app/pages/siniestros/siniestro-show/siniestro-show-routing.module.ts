@@ -38,10 +38,6 @@ const routes: Routes = [
       {
         path: 'cliente',
         component: ClienteViewComponent
-      },
-      {
-        path: 'carga',
-        component: SiniestroShowCargaComponent
       }
     ]
   }

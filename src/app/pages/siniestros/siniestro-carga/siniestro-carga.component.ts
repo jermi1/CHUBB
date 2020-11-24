@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 import icMoreVert from '@iconify/icons-ic/twotone-more-vert';
 import icEdit from '@iconify/icons-ic/twotone-edit';
 import icDeleteForever from '@iconify/icons-ic/twotone-delete-forever';
@@ -12,12 +11,11 @@ import { siniestrosData } from '../../../../static-data/siniestros';
 import { Siniestro } from '../interfaces/siniestro.interface';
 
 @Component({
-  selector: 'vex-siniestro-show',
-  templateUrl: './siniestro-show.component.html',
-  styleUrls: ['./siniestro-show.component.scss']
+  selector: 'vex-siniestro-carga',
+  templateUrl: './siniestro-carga.component.html',
+  styleUrls: ['./siniestro-carga.component.scss']
 })
-export class SiniestroShowComponent implements OnInit {
-
+export class SiniestroCargaComponent implements OnInit {
   icMoreVert = icMoreVert;
   icDeleteForever = icDeleteForever;
   icEdit = icEdit;
@@ -44,28 +42,8 @@ export class SiniestroShowComponent implements OnInit {
 
     this.navLinks = [
       {
-        'label': 'Siniestro',
-        'path': routerPrefix + '/detalles-siniestro'
-      },
-      {
-        'label': 'SCTR',
-        'path': routerPrefix + '/sctr'
-      },
-      {
-        'label': 'Carta de Garantía - Siniestro',
-        'path': routerPrefix + '/siniestro-cg'
-      },
-      {
-        'label': 'Condición Medica',
-        'path': routerPrefix + '/condicion-medica'
-      },
-      {
-        'label': 'Póliza',
-        'path': routerPrefix + '/poliza'
-      },
-      {
-        'label': 'Cliente',
-        'path': routerPrefix + '/cliente'
+        'label': 'Cargar Siniestros',
+        'path': routerPrefix + '/carga'
       }
     ];
   }
