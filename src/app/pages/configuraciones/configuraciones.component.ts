@@ -29,6 +29,15 @@ export interface PeriodicElement {
   actions: boolean;
 }
 
+export interface Producto {
+  codigo: string;
+  nombre: string;
+  riesgoTecnico: string;
+  cobertura: string;
+  estado: string;
+  actions: boolean;
+}
+
 
 const ELEMENT_DATA_PADRE: PeriodicElement[] = [
   {
@@ -67,6 +76,32 @@ const ELEMENT_DATA: PeriodicElement[] = [
   }
 ];
 
+const PRODUCTO_DATA: Producto[] = [
+  {
+    codigo: 'Prod1',
+    nombre: 'Producto1',
+    riesgoTecnico: 'Accidentes Personales',
+    cobertura: 'Hospitalización',
+    estado: 'Activo',
+    actions: true},
+  {
+    codigo: 'Prod2',
+    nombre: 'Producto2',
+    riesgoTecnico: 'Accidentes Personales',
+    cobertura: 'Enfermería',
+    estado: 'Activo',
+    actions: true,
+  },
+  {
+    codigo: 'Prod3',
+    nombre: 'Producto3',
+    riesgoTecnico: 'Accidentes Personales',
+    cobertura: 'Medicina Preventiva',
+    estado: 'Activo',
+    actions: true,
+  }
+];
+
 
 @Component({
   selector: 'vex-cliente-edit',
@@ -77,7 +112,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 export class ConfiguracionesEditComponent implements OnInit {
 
   icArrowBackIos = icArrowBackIos;
- 
+
   cliente: Cliente;
   currentId = 1;
 
@@ -99,8 +134,12 @@ export class ConfiguracionesEditComponent implements OnInit {
   form: MatFormFieldModule;
 
   displayedColumns: string[] = ['name', 'documento'];
+  displayedColumns2: string[] = ['codigo', 'nombre', 'riesgoTecnico', 'cobertura', 'estado', 'actions' ];
+
   dataSourcePadre = ELEMENT_DATA_PADRE;
   dataSource = ELEMENT_DATA;
+
+  dataSourceProducto = PRODUCTO_DATA;
 
   cambioTipoPersona(event: any) {
     if(event.value == 2) {
